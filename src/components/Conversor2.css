@@ -1,0 +1,22 @@
+.conversor2{
+    width: 500px;
+    box-shadow: 1px 4px 8px 1px rgba(0,0,0,0.2);
+    border-radius: 5px;
+}
+
+.linha{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+}
+
+.currency{
+    margin: 0 20px 0 20px;
+    
+}
+
+.select{
+    width: 50px;
+    height: 31px;
+}
