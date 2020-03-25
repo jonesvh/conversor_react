@@ -25,8 +25,6 @@ class Conversor extends Component {
       let moedaB_valor = (parseFloat((this.state.moedaA_valor * cot).toFixed(2)))
       this.setState({moedaB_valor})
     })
-
-    
   }
 
   render () {
@@ -40,7 +38,7 @@ class Conversor extends Component {
           onChange={(event)=>this.setState({moedaA_valor : event.target.value})}
         ></input>
         <input className="button" type="button" value="Convert" onClick={this.convert}></input>
-        <h2>{this.state.moedaB_valor}</h2>
+        <input className="result" value={this.state.moedaB_valor}></input>
       </div>
     )
   }

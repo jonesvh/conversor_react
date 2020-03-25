@@ -1,70 +1,102 @@
 import React, { Component } from 'react'
+import Select from 'react-select'
 import './Conversor2.css'
+import allCurrency from './json'
+
 export default class Conversor2 extends Component {
   constructor () {
     super()
     this.state = {
       value: '',
-      currencyVal1:0,
-      currencyVal2:0,
+      currency1: 0,
+      currency2: 0,
       result: 0,
+      currencies: []
     }
   }
 
-  change = () => {
-    let conv = (parseFloat(this.state.value) * this.state.currencyVal1 / this.state.currencyVal2).toFixed(2)
-    console.log(conv)
+  componentDidMount () {
+    //let url = 'https://free.currconv.com/api/v7/currencies?apiKey=02a0baf4414a654a31db'
+    /*fetch(url)
+      .then(res => {
+        return res.json()
+      })
+      .then(json => {
+        this.setState({ currencies: json })
+      })*/
+
+    let curr = Object.keys(allCurrency.results)
+    let currencies = curr.map(c => {
+      return { value: c, label: c }
+    })
+    this.setState({currencies})
+  }
+
+  convert = () => {
+    let from_to = `${this.state.currency1}_${this.state.currency2}`
+    let url = `https://free.currconv.com/api/v7/convert?apiKey=02a0baf4414a654a31db&q=${from_to}&compact=y`
+    console.log(url)
+
+    fetch(url)
+      .then(res => {
+        return res.json()
+      })
+      .then(json => {
+        let cot = parseFloat(json[from_to].val)
+        console.log(this.state.value)
+        let val = parseFloat(this.state.value)
+        let result = val * cot
+        result = result.toFixed(2)
+        this.setState({ result })
+      })
   }
 
   render () {
+    //console.log(options)
+
     return (
       <div className='conversor2'>
         <div className='linha'>
           <input
-            className='input'
+            className='value'
             type='text'
-            value={this.state.value}
             onChange={ev => {
-              this.setState({ value: ev.target.value })
+              ev.persist()
+              const evnt = ev
+              this.setState({ value: evnt.target.value})
             }}
           ></input>
           <div className='currency'>
-            <select
-              className='select'
-              defaultValue={'USD'}
+            <Select
+            placeholder="Currency 1"
+            className="select"
               onChange={ev => {
-                this.setState({ currencyVal1: parseFloat(ev.target.value) })
+                this.setState({ currency1: ev.value })
               }}
-            >
-              <option value='0'>Select a currency</option>
-              <option value='5.14'>USD</option>
-              <option value='1'>BRL</option>
-              <option value='5.55'>EUR</option>
-            </select>
+              options={this.state.currencies}
+            ></Select>
           </div>
           <h3>to</h3>
           <div className='currency'>
-            <select className='select'
-              defaultValue={'EUR'}
+            <Select
+            placeholder="Currency 2"
+            className="select"
               onChange={ev => {
-                this.setState({ currencyVal2: parseFloat(ev.target.value) })
-              }}>
-              <option value='0'>Select a currency</option>
-              <option value='5'>USD</option>
-              <option value='1'>BRL</option>
-              <option value='5.55'>EUR</option>
-            </select>
+                this.setState({ currency2: ev.value })
+              }}
+              options={this.state.currencies}
+            ></Select>
           </div>
         </div>
         <div className='linha'>
           <input
-            className='button'
-            type='button'
-            value='Convert'
-            onClick={this.change}
+            className='btn'
+            onClick={this.convert}
+            type="button"
+            value="Convert"
           ></input>
         </div>
-        <h3>result</h3>
+        <input className="result" type="text" value={this.state.result} disabled={true}></input>
       </div>
     )
   }
