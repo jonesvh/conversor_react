@@ -9,6 +9,67 @@
     margin: auto;
 }
 
+.header{
+    display: flex;
+    flex: 1;
+    background-color:#035928;
+    height: 80px;
+    margin-top: 0px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px 0 10px;
+}
+
+.curr1{
+    background-image: url('./assets/euaFlag.png');
+    background-repeat: round;
+    width: 30px;
+    height: 20px;
+}
+
+.curr2{
+    background-image: url('./assets/euroFlag.jpg');
+    background-repeat: round;
+    width: 30px;
+    height: 20px;
+}
+
+.divCurr{
+    display: flex;
+    flex: 3;
+    margin:0px 15px 0px 15px;
+    justify-content: center;
+    align-items: center;
+    max-width: 120px;
+    height: 60px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 10px -5px #FFFFFF;
+}
+.textCurr{
+    margin-left: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+}
+
 .title{
-    font-size: 30px;
+    display: flex;
+    flex: 1;
+    color:white;
+}
+
+.title2{
+    color:white;
+}
+
+.title3{
+    color:#035928;
+}
+
+.footer{
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    height: 120px;
+    background-color: #94F29A;
 }

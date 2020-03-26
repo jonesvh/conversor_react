@@ -1,19 +1,20 @@
 .conversor2{
-    width: 500px;
-    box-shadow: 1px 4px 8px 1px rgba(0,0,0,0.2);
+    width: 750px;
+    box-shadow: 1px 4px 8px 1px #035928;
     border-radius: 5px;
+    margin: 0 10px 0 10px;
 }
 
 .linha{
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 10px;
+    margin: 0px;
     height: 50px;
 }
 
 .currency{
-    margin: 0 1px 0 1px;
+    margin: 0 20px 0 20px;
 }
 
 .select{
@@ -36,16 +37,18 @@
     font-size: 25px;
     font-weight: bold;
     text-align: center;
-    background-color: grey;
+    background-color: #94F29A;
     margin:10px 0 10px 0;
     color: black;
 }
 
 .btn{
     width: 120px;
-    height: 34px;
+    height: 38px;
     border-radius: 5px;
     border-width: 1px;
     font-size: 20px;
     text-align: center;
+    background-color: #035928;
+    color: white;
 }

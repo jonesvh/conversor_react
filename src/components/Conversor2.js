@@ -29,26 +29,30 @@ export default class Conversor2 extends Component {
     let currencies = curr.map(c => {
       return { value: c, label: c }
     })
-    this.setState({currencies})
+    this.setState({ currencies })
   }
 
   convert = () => {
-    let from_to = `${this.state.currency1}_${this.state.currency2}`
-    let url = `https://free.currconv.com/api/v7/convert?apiKey=02a0baf4414a654a31db&q=${from_to}&compact=y`
-    console.log(url)
+    if (!this.state.currency1 || !this.state.currency2 || !this.state.value) {
+      alert(`You've to fill the VALUE and the CURRENCIES`)
+    } else {
+      let from_to = `${this.state.currency1}_${this.state.currency2}`
+      let url = `https://free.currconv.com/api/v7/convert?apiKey=02a0baf4414a654a31db&q=${from_to}&compact=y`
+      console.log(url)
 
-    fetch(url)
-      .then(res => {
-        return res.json()
-      })
-      .then(json => {
-        let cot = parseFloat(json[from_to].val)
-        console.log(this.state.value)
-        let val = parseFloat(this.state.value)
-        let result = val * cot
-        result = result.toFixed(2)
-        this.setState({ result })
-      })
+      fetch(url)
+        .then(res => {
+          return res.json()
+        })
+        .then(json => {
+          let cot = parseFloat(json[from_to].val)
+          console.log(this.state.value)
+          let val = parseFloat(this.state.value)
+          let result = val * cot
+          result = result.toFixed(2)
+          this.setState({ result })
+        })
+    }
   }
 
   render () {
@@ -63,13 +67,14 @@ export default class Conversor2 extends Component {
             onChange={ev => {
               ev.persist()
               const evnt = ev
-              this.setState({ value: evnt.target.value})
+              var val = evnt.target.value.replace(',', '.')
+              this.setState({ value: val })
             }}
           ></input>
           <div className='currency'>
             <Select
-            placeholder="Currency 1"
-            className="select"
+              placeholder='Currency 1'
+              className='select'
               onChange={ev => {
                 this.setState({ currency1: ev.value })
               }}
@@ -79,8 +84,8 @@ export default class Conversor2 extends Component {
           <h3>to</h3>
           <div className='currency'>
             <Select
-            placeholder="Currency 2"
-            className="select"
+              placeholder='Currency 2'
+              className='select'
               onChange={ev => {
                 this.setState({ currency2: ev.value })
               }}
@@ -92,11 +97,16 @@ export default class Conversor2 extends Component {
           <input
             className='btn'
             onClick={this.convert}
-            type="button"
-            value="Convert"
+            type='button'
+            value='Convert'
           ></input>
         </div>
-        <input className="result" type="text" value={this.state.result} disabled={true}></input>
+        <input
+          className='result'
+          type='text'
+          value={this.state.result}
+          disabled={true}
+        ></input>
       </div>
     )
   }

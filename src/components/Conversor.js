@@ -14,7 +14,7 @@ class Conversor extends Component {
   convert = () => {
 
     let from_to = `${this.props.moedaA}_${this.props.moedaB}`
-    let url = `https://free.currconv.com/api/v7/convert?apiKey=do-not-use-this-key&q=${from_to}&compact=y`
+    let url = `https://free.currconv.com/api/v7/convert?apiKey=02a0baf4414a654a31db&q=${from_to}&compact=y`
 
     fetch(url)
     .then(res=>{
@@ -30,15 +30,18 @@ class Conversor extends Component {
   render () {
     return (
       <div className="conversor">
-        <h2>{this.props.moedaA} to {this.props.moedaB}</h2>
+        <h2 className="title2">{this.props.moedaA} to {this.props.moedaB}</h2>
         <input
           className="input"
           type='text'
           value={this.moedaA_valor}
-          onChange={(event)=>this.setState({moedaA_valor : event.target.value})}
+          onChange={(event)=>{
+            var val = event.target.value.replace(',', '.')
+            this.setState({moedaA_valor : val})
+          }}
         ></input>
         <input className="button" type="button" value="Convert" onClick={this.convert}></input>
-        <input className="result" value={this.state.moedaB_valor}></input>
+        <input className="result" value={this.state.moedaB_valor} disabled={true}></input>
       </div>
     )
   }
