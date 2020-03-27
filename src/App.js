@@ -18,8 +18,8 @@ class App extends Component {
     let ls = localStorage.getItem('cot')
     let lsMill = parseFloat(localStorage.getItem('cotMill'))
     lsMill += 3600000
-    let atualdate = new Date;
-    console.log(atualdate.getTime(),lsMill)
+    let atualdate = new Date()
+    console.log(atualdate.getTime(), lsMill)
     if (!ls || atualdate.getTime() > lsMill) {
       console.log('buscou')
       localStorage.removeItem('cot')
@@ -33,9 +33,8 @@ class App extends Component {
           return res.json()
         })
         .then(json => {
-
           localStorage.setItem('cot', JSON.stringify(json))
-          let date = new Date;
+          let date = new Date()
           localStorage.setItem('cotMill', date.getTime())
 
           let cot1 = parseFloat(json.USD_BRL.val).toFixed(2)
@@ -92,8 +91,8 @@ class App extends Component {
           <Conversor2></Conversor2>
         </div>
         <div className='footer'>
-        <p>Developed by: Jones Veriato Hoffstetter</p>
-        <p>Hints: Augusto Zvoboter</p>
+          <p>Developed by: Jones Veriato Hoffstetter</p>
+          <p>Hints: Augusto Zvoboter</p>
         </div>
       </div>
     )

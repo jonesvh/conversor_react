@@ -3,7 +3,7 @@
 }
 
 .item{
-    max-width: 800px;
+    max-width: 900px;
     display: flex;
     justify-content: space-around;
     margin: auto;

@@ -60,9 +60,9 @@ export default class Conversor2 extends Component {
 
     return (
       <div className='conversor2'>
-        <div className='linha'>
+        <div className='inputs2'>
           <input
-            className='value'
+            className='input'
             type='text'
             onChange={ev => {
               ev.persist()
@@ -71,7 +71,7 @@ export default class Conversor2 extends Component {
               this.setState({ value: val })
             }}
           ></input>
-          <div className='currency'>
+          <div className='currencies'>
             <Select
               placeholder='Currency 1'
               className='select'
@@ -80,9 +80,7 @@ export default class Conversor2 extends Component {
               }}
               options={this.state.currencies}
             ></Select>
-          </div>
-          <h3>to</h3>
-          <div className='currency'>
+            <h3 className='title2'>-></h3>
             <Select
               placeholder='Currency 2'
               className='select'
@@ -92,21 +90,19 @@ export default class Conversor2 extends Component {
               options={this.state.currencies}
             ></Select>
           </div>
-        </div>
-        <div className='linha'>
           <input
             className='btn'
             onClick={this.convert}
             type='button'
             value='Convert'
           ></input>
+          <input
+            className='result'
+            type='text'
+            value={this.state.result}
+            disabled={true}
+          ></input>
         </div>
-        <input
-          className='result'
-          type='text'
-          value={this.state.result}
-          disabled={true}
-        ></input>
       </div>
     )
   }
