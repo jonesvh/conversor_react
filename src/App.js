@@ -81,14 +81,16 @@ class App extends Component {
             <p className='textCurr'>{this.state.euro}</p>
           </div>
         </div>
-        <h3 className='title3'>Example</h3>
-        <div className='item'>
-          <Conversor moedaA='USD' moedaB='BRL'></Conversor>
-          <Conversor moedaA='BRL' moedaB='USD'></Conversor>
-        </div>
-        <h3 className='title3'>Try yourself</h3>
-        <div className='item'>
-          <Conversor2></Conversor2>
+        <div className='body'>
+          <h3 className='title3'>Example</h3>
+          <div className='item'>
+            <Conversor moedaA='USD' moedaB='BRL'></Conversor>
+            <Conversor moedaA='BRL' moedaB='USD'></Conversor>
+          </div>
+          <h3 className='title3'>Try yourself</h3>
+          <div className='item'>
+            <Conversor2></Conversor2>
+          </div>
         </div>
         <div className='footer'>
           <p>Developed by: Jones Veriato Hoffstetter</p>

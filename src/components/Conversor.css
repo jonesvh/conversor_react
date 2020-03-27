@@ -36,6 +36,7 @@
     color: #035928;
     font-size: 25px;
     font-weight: bold;
+    margin: 2px;
 }
 
 .btn{
@@ -48,6 +49,7 @@
     background-color: #035928;
     color: white;
     font-size: 20px;
+    margin: 2px;
 }
 
 .result{
@@ -60,4 +62,5 @@
     background-color: #94F29A;
     color: white;
     font-size: 20px;
+    margin: 2px;
 }
