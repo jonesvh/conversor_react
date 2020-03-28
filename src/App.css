@@ -73,6 +73,7 @@
     background-color: white;
     border-radius: 32.5px;
     max-width: 65px;
+    min-width: 65px;
     height: 65px;
 }
 

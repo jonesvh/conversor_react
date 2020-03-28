@@ -27,6 +27,7 @@ class App extends Component {
       locales
     })
   }
+  
 
   componentDidMount () {
     //localStorage.removeItem('cot')
