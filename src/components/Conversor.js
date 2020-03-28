@@ -1,5 +1,11 @@
 import React, { Component } from 'react'
 import './Conversor.css'
+import intl from 'react-intl-universal';
+
+const locales = {
+  'pt-BR': require('../locales/pt-BR.json'),
+  'en-US': require('../locales/en-US.json')
+}
 
 class Conversor extends Component {
   constructor (props) {
@@ -9,6 +15,15 @@ class Conversor extends Component {
       moedaA_valor: '', //para calcular
       moedaB_valor: 0
     }
+
+    const currentLocale = locales[navigator.language]
+      ? navigator.language
+      : 'pt-BR'
+
+    intl.init({
+      currentLocale,
+      locales
+    })
   }
 
   convert = () => {
@@ -83,7 +98,7 @@ class Conversor extends Component {
           <input
             className='btn'
             type='button'
-            value='Convert'
+            value={intl.get("btn").convert}
             onClick={this.convert}
           ></input>
           <input

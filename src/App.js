@@ -2,6 +2,12 @@ import React, { Component } from 'react'
 import './App.css'
 import Conversor from './components/Conversor'
 import Conversor2 from './components/Conversor2'
+import intl from 'react-intl-universal';
+
+const locales = {
+  'pt-BR': require('./locales/pt-BR.json'),
+  'en-US': require('./locales/en-US.json')
+}
 
 class App extends Component {
   constructor () {
@@ -11,6 +17,15 @@ class App extends Component {
       dolar: '',
       euro: ''
     }
+
+    const currentLocale = locales[navigator.language]
+      ? navigator.language
+      : 'pt-BR'
+
+    intl.init({
+      currentLocale,
+      locales
+    })
   }
 
   componentDidMount () {
@@ -58,8 +73,8 @@ class App extends Component {
       <div className='app'>
         <div className='header'>
           <div className='title'>
-            <div className="logo"></div>
-            <h3 className="textTitle">Currency Converter</h3>
+            <div className='logo'></div>
+            <h3 className='textTitle'>{intl.get('title').dsc}</h3>
           </div>
           <div className='divCurr'>
             <div className='curr1'></div>
@@ -71,19 +86,19 @@ class App extends Component {
           </div>
         </div>
         <div className='body'>
-          <h3 className='title3'>Example</h3>
+          <h3 className='title3'>{intl.get('example').dsc}</h3>
           <div className='item'>
             <Conversor moedaA='USD' moedaB='BRL'></Conversor>
             <Conversor moedaA='BRL' moedaB='USD'></Conversor>
           </div>
-          <h3 className='title3'>Try yourself</h3>
+          <h3 className='title3'>{intl.get('tryyourself').dsc}</h3>
           <div className='item'>
             <Conversor2></Conversor2>
           </div>
         </div>
         <div className='footer'>
-          <p className='itemFooter'>Developed by: Jones Veriato Hoffstetter</p>
-          <p className='itemFooter'>Hints: Augusto Zvoboter</p>
+          <p className='itemFooter'>{intl.get("devby").dev}: Jones Veriato Hoffstetter</p>
+          <p className='itemFooter'>{intl.get("devby").hints}: Augusto Zvoboter</p>
         </div>
       </div>
     )
