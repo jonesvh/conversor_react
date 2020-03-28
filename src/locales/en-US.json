@@ -1,0 +1,19 @@
+{
+    "title": {
+      "dsc": "Currency Converter"
+    },
+    "example":{
+      "dsc": "Example"
+    },
+    "tryyourself": {
+      "dsc": "Try yourself"
+    },
+    "devby":{
+      "dev": "Developed by",
+      "hints": "Hints"
+    },
+    "btn":{
+      "convert": "Convert"
+    }
+    
+  }

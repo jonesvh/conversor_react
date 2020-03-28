@@ -64,12 +64,7 @@ class Conversor extends Component {
   }
 
   setRes = () => {
-    let val
-    if (this.state.moedaB_valorStr != 0) {
-      val = this.maskValue(this.state.moedaB_valor)
-    } else {
-      val = this.state.moedaB_valor
-    }
+    let val = this.maskValue(this.state.moedaB_valor)
     //let val = this.state.moedaB_valorStr
     return val.toFixed(2)
   }
