@@ -51,27 +51,16 @@ class App extends Component {
       this.setState({ dolar: cot1 })
       this.setState({ euro: cot2 })
     }
-
-    let from_to = 'USD_BRL,EUR_BRL'
-    let url = '' //`https://free.currconv.com/api/v7/convert?apiKey=02a0baf4414a654a31db&q=${from_to}&compact=y`
-
-    fetch(url)
-      .then(res => {
-        return res.json()
-      })
-      .then(json => {
-        let cot1 = parseFloat(json.USD_BRL.val).toFixed(2)
-        let cot2 = parseFloat(json.EUR_BRL.val).toFixed(2)
-        this.setState({ dolar: cot1 })
-        this.setState({ euro: cot2 })
-      })
   }
 
   render () {
     return (
       <div className='app'>
         <div className='header'>
-          <h1 className='title'>Currency Converter</h1>
+          <div className='title'>
+            <div className="logo"></div>
+            <h3 className="textTitle">Currency Converter</h3>
+          </div>
           <div className='divCurr'>
             <div className='curr1'></div>
             <p className='textCurr'>{this.state.dolar}</p>
@@ -93,8 +82,8 @@ class App extends Component {
           </div>
         </div>
         <div className='footer'>
-          <p>Developed by: Jones Veriato Hoffstetter</p>
-          <p>Hints: Augusto Zvoboter</p>
+          <p className='itemFooter'>Developed by: Jones Veriato Hoffstetter</p>
+          <p className='itemFooter'>Hints: Augusto Zvoboter</p>
         </div>
       </div>
     )

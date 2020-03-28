@@ -15,7 +15,7 @@
     display: flex;
     flex: 1;
     background-color:#035928;
-    height: 80px;
+    min-height: 80px;
     margin-top: 0px;
     align-items: center;
     justify-content: space-between;
@@ -58,6 +58,22 @@
     display: flex;
     flex: 1;
     color:white;
+    align-items: center;
+    justify-content: center;
+}
+
+.textTitle{
+    flex: 1;
+}
+
+.logo{
+    flex: 1;
+    background-image: url('./assets/logo192.png');
+    background-repeat: round;
+    background-color: white;
+    border-radius: 32.5px;
+    max-width: 65px;
+    height: 65px;
 }
 
 .title2{
@@ -70,17 +86,22 @@
 
 .body{
     flex:1;
-    margin-bottom: 125px;
+    margin-bottom: 90px;
 }
 
 .footer{
     display: flex;
+    flex: 1;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     position: fixed;
     bottom: 0px;
     width: 100%;
-    height: 120px;
+    height: 80px;
     background-color: #94F29A;
+}
+
+.itemFooter{
+    flex: 1;
 }

@@ -6,12 +6,20 @@ class Conversor extends Component {
     super(props)
 
     this.state = {
-      moedaA_valor: '',
+      moedaA_valor: '', //para calcular
       moedaB_valor: 0
     }
   }
 
   convert = () => {
+    
+    let typedVal = this.state.moedaA_valor
+    //typedVal = typedVal.replace(',', '.')
+    //typedVal *= 10
+    //typedVal = typedVal.toString().replace('.', ',')
+
+    //console.log(this.state.moedaA_valor, typedVal)
+
     let from_to = `${this.props.moedaA}_${this.props.moedaB}`
     let url = `https://free.currconv.com/api/v7/convert?apiKey=02a0baf4414a654a31db&q=${from_to}&compact=y`
 
@@ -21,11 +29,34 @@ class Conversor extends Component {
       })
       .then(json => {
         let cot = json[from_to].val
-        let moedaB_valor = parseFloat(
-          (this.state.moedaA_valor * cot).toFixed(2)
-        )
+        let moedaB_valor = parseFloat(typedVal * cot)
         this.setState({ moedaB_valor })
       })
+  }
+
+  maskValue = i => {
+    var v = i.replace(/\D/g, '')
+    v = (v / 100).toFixed(2) + ''
+    v = v.replace('.', ',')
+    v = v.replace(/(\d)(\d{3})(\d{3}),/g, '$1.$2.$3,')
+    v = v.replace(/(\d)(\d{3}),/g, '$1.$2,')
+    return v
+  }
+
+  getVal = () => {
+    let valStr = this.maskValue(this.state.moedaA_valor)
+    return valStr
+  }
+
+  setRes = () => {
+    let val
+    if (this.state.moedaB_valorStr != 0) {
+      val = this.maskValue(this.state.moedaB_valor)
+    } else {
+      val = this.state.moedaB_valor
+    }
+    //let val = this.state.moedaB_valorStr
+    return val.toFixed(2)
   }
 
   render () {
@@ -33,16 +64,19 @@ class Conversor extends Component {
       <div className='conversor'>
         <div className='title2'>
           <h2>
-            {this.props.moedaA} to {this.props.moedaB}
+            {this.props.moedaA} -> {this.props.moedaB}
           </h2>
         </div>
-        <div className="inputs">
+        <div className='inputs'>
           <input
             className='input'
             type='text'
-            value={this.moedaA_valor}
+            //value={this.getVal()}
+            value={this.state.moedaA_valor}
             onChange={event => {
-              var val = event.target.value.replace(',', '.')
+              event.persist()
+              let ev = event
+              var val = ev.target.value
               this.setState({ moedaA_valor: val })
             }}
           ></input>
@@ -54,7 +88,8 @@ class Conversor extends Component {
           ></input>
           <input
             className='result'
-            value={this.state.moedaB_valor}
+            //value={this.setRes()}
+            value={this.state.moedaB_valor.toFixed(2)}
             disabled={true}
           ></input>
         </div>
