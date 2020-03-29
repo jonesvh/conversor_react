@@ -20,6 +20,6 @@
     "two": "Currency 2"
   },
   "msg": {
-    "fielallinputs": "You've to fill the VALUE and the CURRENCIES"
+    "fillallinputs": "You've to fill the VALUE and the CURRENCIES"
   }
 }

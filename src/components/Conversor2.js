@@ -49,7 +49,7 @@ export default class Conversor2 extends Component {
 
   convert = () => {
     if (!this.state.currency1 || !this.state.currency2 || !this.state.value) {
-      alert(intl.get('msg.fieldallinputs'))
+      alert(intl.get('msg.fillallinputs'))
     } else {
       let from_to = `${this.state.currency1}_${this.state.currency2}`
       let url = `https://free.currconv.com/api/v7/convert?apiKey=02a0baf4414a654a31db&q=${from_to}&compact=y`
