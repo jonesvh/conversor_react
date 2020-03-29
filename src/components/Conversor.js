@@ -12,7 +12,7 @@ class Conversor extends Component {
     super(props)
 
     this.state = {
-      moedaA_valor: '1', //para calcular
+      moedaA_valor: 1, //para calcular
       moedaB_valor: 0
     }
 
@@ -92,7 +92,7 @@ class Conversor extends Component {
         <div className='inputs'>
           <input
             className='input'
-            type='text'
+            type='number'
             pattern='[0-9]+$'
             //value={this.getVal()}
             value={this.state.moedaA_valor}
