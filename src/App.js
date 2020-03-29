@@ -16,10 +16,11 @@ const locales = {
 }
 
 class App extends Component {
+
+  initGA()
+  
   constructor () {
     super()
-    initGA()
-
     this.state = {
       dolar: '',
       euro: ''
