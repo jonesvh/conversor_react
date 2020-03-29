@@ -12,7 +12,7 @@ class Conversor extends Component {
     super(props)
 
     this.state = {
-      moedaA_valor: '1', //para calcular
+      moedaA_valor: '1,00', //para calcular
       moedaB_valor: 0
     }
 
@@ -33,6 +33,9 @@ class Conversor extends Component {
   convert = () => {
     
     let typedVal = this.state.moedaA_valor
+
+    let valNumber = typedVal.toString().replace(',', '')
+    valNumber = valNumber.replace('.', '')
     //typedVal = typedVal.replace(',', '.')
     //typedVal *= 10
     //typedVal = typedVal.toString().replace('.', ',')
@@ -47,9 +50,9 @@ class Conversor extends Component {
         return res.json()
       })
       .then(json => {
-        console.log(json)
+        //console.log(json)
         let cot = json[from_to].val
-        let moedaB_valor = parseFloat(typedVal * cot)
+        let moedaB_valor = parseFloat(valNumber * cot)
         this.setState({ moedaB_valor })
       })
   }
@@ -86,8 +89,8 @@ class Conversor extends Component {
           <input
             className='input'
             type='text'
-            //value={this.getVal()}
-            value={this.state.moedaA_valor}
+            value={this.getVal()}
+            //value={this.state.moedaA_valor}
             onChange={event => {
               event.persist()
               let ev = event

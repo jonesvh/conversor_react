@@ -49,11 +49,11 @@ export default class Conversor2 extends Component {
 
   convert = () => {
     if (!this.state.currency1 || !this.state.currency2 || !this.state.value) {
-      alert(`You've to fill the VALUE and the CURRENCIES`)
+      alert(intl.get('msg.fieldallinputs'))
     } else {
       let from_to = `${this.state.currency1}_${this.state.currency2}`
       let url = `https://free.currconv.com/api/v7/convert?apiKey=02a0baf4414a654a31db&q=${from_to}&compact=y`
-      console.log(url)
+      //console.log(url)
 
       fetch(url)
         .then(res => {
@@ -61,7 +61,7 @@ export default class Conversor2 extends Component {
         })
         .then(json => {
           let cot = parseFloat(json[from_to].val)
-          console.log(this.state.value)
+          //console.log(this.state.value)
           let val = parseFloat(this.state.value)
           let result = val * cot
           result = result.toFixed(2)
@@ -88,19 +88,19 @@ export default class Conversor2 extends Component {
           ></input>
           <div className='currencies'>
             <Select
-              value={this.state.iniValue}
+              //value={this.state.iniValue}
               placeholder={intl.get("currency.one")}
               className='select'
               onChange={ev => {
 
-                console.log(ev)
+                //console.log(ev)
                 this.setState({ currency1: ev.value })
               }}
               options={this.state.currencies}
             ></Select>
             <h3 className='title2'>-></h3>
             <Select
-              value={this.state.iniValue}
+              //value={this.state.iniValue}
               placeholder={intl.get("currency.two")}
               className='select'
               onChange={ev => {

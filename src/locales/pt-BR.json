@@ -18,5 +18,8 @@
   "currency":{
     "one": "Moeda 1",
     "two": "Moeda 2"
+  },
+  "msg": {
+    "fielallinputs": "Você deve preencher o valor e as moedas para conversão"
   }
 }

@@ -1,22 +1,25 @@
 {
-    "title": {
-      "dsc": "Currency Converter"
-    },
-    "example":{
-      "dsc": "Example"
-    },
-    "tryyourself": {
-      "dsc": "Try yourself"
-    },
-    "devby":{
-      "dev": "Developed by",
-      "hints": "Hints"
-    },
-    "btn":{
-      "convert": "Convert"
-    },
-    "currency":{
-      "one": "Currency 1",
-      "two": "Currency 2"
-    }
+  "title": {
+    "dsc": "Currency Converter"
+  },
+  "example": {
+    "dsc": "Example"
+  },
+  "tryyourself": {
+    "dsc": "Try yourself"
+  },
+  "devby": {
+    "dev": "Developed by",
+    "hints": "Hints"
+  },
+  "btn": {
+    "convert": "Convert"
+  },
+  "currency": {
+    "one": "Currency 1",
+    "two": "Currency 2"
+  },
+  "msg": {
+    "fielallinputs": "You've to fill the VALUE and the CURRENCIES"
   }
+}
