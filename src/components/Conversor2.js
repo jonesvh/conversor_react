@@ -67,7 +67,7 @@ export default class Conversor2 extends Component {
           result = result.toFixed(2)
           this.setState({ result })
 
-          console.log('buscou Conversor 2')
+          //console.log('buscou Conversor 2')
         })
     }
   }

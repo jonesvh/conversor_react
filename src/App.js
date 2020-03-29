@@ -34,7 +34,7 @@ class App extends Component {
     let lsMill = parseFloat(localStorage.getItem('cotMill'))
     lsMill += 3600000
     let atualdate = new Date()
-    console.log(lsMill - atualdate.getTime())
+    //console.log(lsMill - atualdate.getTime())
     if (!ls || atualdate.getTime() > lsMill) {
       //console.log('buscou')
       localStorage.removeItem('cot')
@@ -57,7 +57,7 @@ class App extends Component {
           this.setState({ dolar: cot1 })
           this.setState({ euro: cot2 })
 
-          console.log('buscou APP')
+          //console.log('buscou APP')
         })
     } else {
       //console.log(ls)
