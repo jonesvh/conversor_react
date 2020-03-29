@@ -2,11 +2,13 @@ import React, { Component } from 'react'
 import './App.css'
 import Conversor from './components/Conversor'
 import Conversor2 from './components/Conversor2'
-import intl from 'react-intl-universal';
-import ReactGA from 'react-ga';
+import intl from 'react-intl-universal'
+import ReactGA from 'react-ga'
 
-ReactGA.initialize('G-NW0S6Z0CWF');
-ReactGA.pageview(window.location.pathname + window.location.search);
+function initGA () {
+  ReactGA.initialize('G-NW0S6Z0CWF')
+  ReactGA.pageview(window.location.pathname + window.location.search)
+}
 
 const locales = {
   'pt-BR': require('./locales/pt-BR.json'),
@@ -16,6 +18,7 @@ const locales = {
 class App extends Component {
   constructor () {
     super()
+    initGA()
 
     this.state = {
       dolar: '',
@@ -103,8 +106,12 @@ class App extends Component {
           </div>
         </div>
         <div className='footer'>
-          <p className='itemFooter'>{intl.get("devby.dev")}: Jones Veriato Hoffstetter</p>
-          <p className='itemFooter'>{intl.get("devby.hints")}: Augusto Zvoboter</p>
+          <p className='itemFooter'>
+            {intl.get('devby.dev')}: Jones Veriato Hoffstetter
+          </p>
+          <p className='itemFooter'>
+            {intl.get('devby.hints')}: Augusto Zvoboter
+          </p>
         </div>
       </div>
     )
