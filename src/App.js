@@ -27,7 +27,6 @@ class App extends Component {
       locales
     })
   }
-  
 
   componentDidMount () {
     //localStorage.removeItem('cot')
@@ -75,7 +74,7 @@ class App extends Component {
         <div className='header'>
           <div className='title'>
             <div className='logo'></div>
-            <h3 className='textTitle'>{intl.get('title').dsc}</h3>
+            <h3 className='textTitle'>{intl.get('title.dsc')}</h3>
           </div>
           <div className='divCurr'>
             <div className='curr1'></div>
@@ -87,19 +86,19 @@ class App extends Component {
           </div>
         </div>
         <div className='body'>
-          <h3 className='title3'>{intl.get('example').dsc}</h3>
+          <h3 className='title3'>{intl.get('example.dsc')}</h3>
           <div className='item'>
             <Conversor moedaA='USD' moedaB='BRL'></Conversor>
-            <Conversor moedaA='BRL' moedaB='USD'></Conversor>
+            <Conversor moedaA='EUR' moedaB='BRL'></Conversor>
           </div>
-          <h3 className='title3'>{intl.get('tryyourself').dsc}</h3>
+          <h3 className='title3'>{intl.get('tryyourself.dsc')}</h3>
           <div className='item'>
             <Conversor2></Conversor2>
           </div>
         </div>
         <div className='footer'>
-          <p className='itemFooter'>{intl.get("devby").dev}: Jones Veriato Hoffstetter</p>
-          <p className='itemFooter'>{intl.get("devby").hints}: Augusto Zvoboter</p>
+          <p className='itemFooter'>{intl.get("devby.dev")}: Jones Veriato Hoffstetter</p>
+          <p className='itemFooter'>{intl.get("devby.hints")}: Augusto Zvoboter</p>
         </div>
       </div>
     )

@@ -12,7 +12,7 @@ class Conversor extends Component {
     super(props)
 
     this.state = {
-      moedaA_valor: '', //para calcular
+      moedaA_valor: '1', //para calcular
       moedaB_valor: 0
     }
 
@@ -24,6 +24,10 @@ class Conversor extends Component {
       currentLocale,
       locales
     })
+  }
+
+  componentDidMount = () =>{
+    this.convert()
   }
 
   convert = () => {
@@ -43,6 +47,7 @@ class Conversor extends Component {
         return res.json()
       })
       .then(json => {
+        console.log(json)
         let cot = json[from_to].val
         let moedaB_valor = parseFloat(typedVal * cot)
         this.setState({ moedaB_valor })
@@ -93,7 +98,7 @@ class Conversor extends Component {
           <input
             className='btn'
             type='button'
-            value={intl.get("btn").convert}
+            value={intl.get("btn.convert")}
             onClick={this.convert}
           ></input>
           <input

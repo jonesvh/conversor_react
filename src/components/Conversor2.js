@@ -2,6 +2,12 @@ import React, { Component } from 'react'
 import Select from 'react-select'
 import './Conversor2.css'
 import allCurrency from './json'
+import intl from 'react-intl-universal';
+
+const locales = {
+  'pt-BR': require('../locales/pt-BR.json'),
+  'en-US': require('../locales/en-US.json')
+}
 
 export default class Conversor2 extends Component {
   constructor () {
@@ -11,8 +17,17 @@ export default class Conversor2 extends Component {
       currency1: 0,
       currency2: 0,
       result: 0,
-      currencies: []
+      currencies: [],
+      iniValue: '{value: "ALL", label: "ALL"}'
     }
+     const currentLocale = locales[navigator.language]
+      ? navigator.language
+      : 'pt-BR'
+
+    intl.init({
+      currentLocale,
+      locales
+    })
   }
 
   componentDidMount () {
@@ -73,16 +88,20 @@ export default class Conversor2 extends Component {
           ></input>
           <div className='currencies'>
             <Select
-              placeholder='Currency 1'
+              value={this.state.iniValue}
+              placeholder={intl.get("currency.one")}
               className='select'
               onChange={ev => {
+
+                console.log(ev)
                 this.setState({ currency1: ev.value })
               }}
               options={this.state.currencies}
             ></Select>
             <h3 className='title2'>-></h3>
             <Select
-              placeholder='Currency 2'
+              value={this.state.iniValue}
+              placeholder={intl.get("currency.two")}
               className='select'
               onChange={ev => {
                 this.setState({ currency2: ev.value })
@@ -94,7 +113,7 @@ export default class Conversor2 extends Component {
             className='btn'
             onClick={this.convert}
             type='button'
-            value='Convert'
+            value={intl.get("btn.convert")}
           ></input>
           <input
             className='result'

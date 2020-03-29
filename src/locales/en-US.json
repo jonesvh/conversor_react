@@ -14,6 +14,9 @@
     },
     "btn":{
       "convert": "Convert"
+    },
+    "currency":{
+      "one": "Currency 1",
+      "two": "Currency 2"
     }
-    
   }

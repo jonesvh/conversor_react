@@ -14,6 +14,9 @@
   },
   "btn":{
     "convert": "Converter"
+  },
+  "currency":{
+    "one": "Moeda 1",
+    "two": "Moeda 2"
   }
-  
 }
