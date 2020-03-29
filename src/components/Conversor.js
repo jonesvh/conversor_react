@@ -93,6 +93,7 @@ class Conversor extends Component {
           <input
             className='input'
             type='number'
+            inputmode="number"
             pattern='[0-9]+$'
             //value={this.getVal()}
             value={this.state.moedaA_valor}
