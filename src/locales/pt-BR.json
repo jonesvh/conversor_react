@@ -20,6 +20,6 @@
     "two": "Moeda 2"
   },
   "msg": {
-    "fillallinputs": "Você deve preencher o valor e as moedas para conversão"
+    "fillallinputs": "Você deve preencher o VALOR e as MOEDAS para conversão"
   }
 }

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import './Conversor.css'
-import intl from 'react-intl-universal';
+import intl from 'react-intl-universal'
 
 const locales = {
   'pt-BR': require('../locales/pt-BR.json'),
@@ -12,7 +12,7 @@ class Conversor extends Component {
     super(props)
 
     this.state = {
-      moedaA_valor: '1,00', //para calcular
+      moedaA_valor: '1', //para calcular
       moedaB_valor: 0
     }
 
@@ -26,22 +26,26 @@ class Conversor extends Component {
     })
   }
 
-  componentDidMount = () =>{
+  componentDidMount = () => {
     this.convert()
   }
 
   convert = () => {
-    
     let typedVal = this.state.moedaA_valor
+    let ls = localStorage.getItem('cot')
+    let json = JSON.parse(ls)
 
-    let valNumber = typedVal.toString().replace(',', '')
-    valNumber = valNumber.replace('.', '')
-    //typedVal = typedVal.replace(',', '.')
-    //typedVal *= 10
-    //typedVal = typedVal.toString().replace('.', ',')
+    if (this.props.moedaA == 'USD') {
+      let cot1 = parseFloat(json.USD_BRL.val).toFixed(2)
+      let moedaB_valor = parseFloat(typedVal * cot1)
+      this.setState({ moedaB_valor })
+    } else {
+      let cot1 = parseFloat(json.EUR_BRL.val).toFixed(2)
+      let moedaB_valor = parseFloat(typedVal * cot1)
+      this.setState({ moedaB_valor })
+    }
 
-    //console.log(this.state.moedaA_valor, typedVal)
-
+    /*
     let from_to = `${this.props.moedaA}_${this.props.moedaB}`
     let url = `https://free.currconv.com/api/v7/convert?apiKey=02a0baf4414a654a31db&q=${from_to}&compact=y`
 
@@ -52,16 +56,17 @@ class Conversor extends Component {
       .then(json => {
         //console.log(json)
         let cot = json[from_to].val
-        let moedaB_valor = parseFloat(valNumber * cot)
+        let moedaB_valor = parseFloat(typedVal * cot)
         this.setState({ moedaB_valor })
       })
+      */
   }
 
   maskValue = i => {
     var v = i.replace(/\D/g, '')
     v = (v / 100).toFixed(2) + ''
     v = v.replace('.', ',')
-    v = v.replace(/(\d)(\d{3})(\d{3}),/g, '$1.$2.$3,')
+    v = v.replace(/(\d)(\d{1})(\d{}),/g, '$1.$2.$3,')
     v = v.replace(/(\d)(\d{3}),/g, '$1.$2,')
     return v
   }
@@ -89,8 +94,9 @@ class Conversor extends Component {
           <input
             className='input'
             type='text'
-            value={this.getVal()}
-            //value={this.state.moedaA_valor}
+            pattern='[0-9]+$'
+            //value={this.getVal()}
+            value={this.state.moedaA_valor}
             onChange={event => {
               event.persist()
               let ev = event
@@ -101,7 +107,7 @@ class Conversor extends Component {
           <input
             className='btn'
             type='button'
-            value={intl.get("btn.convert")}
+            value={intl.get('btn.convert')}
             onClick={this.convert}
           ></input>
           <input

@@ -66,6 +66,8 @@ export default class Conversor2 extends Component {
           let result = val * cot
           result = result.toFixed(2)
           this.setState({ result })
+
+          console.log('buscou Conversor 2')
         })
     }
   }

@@ -56,6 +56,8 @@ class App extends Component {
           let cot2 = parseFloat(json.EUR_BRL.val).toFixed(2)
           this.setState({ dolar: cot1 })
           this.setState({ euro: cot2 })
+
+          console.log('buscou APP')
         })
     } else {
       //console.log(ls)
