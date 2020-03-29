@@ -34,8 +34,7 @@ class Conversor extends Component {
     let typedVal = this.state.moedaA_valor
     let ls = localStorage.getItem('cot')
     let json = JSON.parse(ls)
-
-    if (this.props.moedaA_valor === 'USD') {
+    if (this.props.moedaA === 'USD') {
       let cot1 = parseFloat(json.USD_BRL.val).toFixed(2)
       let moedaB_valor = parseFloat(typedVal * cot1)
       this.setState({ moedaB_valor })
