@@ -3,6 +3,10 @@ import './App.css'
 import Conversor from './components/Conversor'
 import Conversor2 from './components/Conversor2'
 import intl from 'react-intl-universal';
+import ReactGA from 'react-ga';
+
+ReactGA.initialize('G-NW0S6Z0CWF');
+ReactGA.pageview(window.location.pathname + window.location.search);
 
 const locales = {
   'pt-BR': require('./locales/pt-BR.json'),
