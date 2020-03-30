@@ -7,7 +7,7 @@ import ReactGA from 'react-ga'
 
 function initGA () {
   ReactGA.initialize('G-NW0S6Z0CWF')
-  ReactGA.pageview('/index.html')
+  ReactGA.pageview(window.location.pathname + window.location.search)
 }
 
 const locales = {
@@ -16,9 +16,6 @@ const locales = {
 }
 
 class App extends Component {
-
-  initGA()
-
   constructor () {
     super()
     this.state = {
@@ -35,8 +32,8 @@ class App extends Component {
       locales
     })
   }
-
   componentDidMount () {
+    initGA()
     //localStorage.removeItem('cot')
     let ls = localStorage.getItem('cot')
     let lsMill = parseFloat(localStorage.getItem('cotMill'))
