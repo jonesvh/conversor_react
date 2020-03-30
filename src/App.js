@@ -6,7 +6,7 @@ import intl from 'react-intl-universal'
 import ReactGA from 'react-ga'
 
 function initGA () {
-  ReactGA.initialize('G-NW0S6Z0CWF')
+  ReactGA.initialize('UA-162192560-1')
   ReactGA.pageview(window.location.pathname + window.location.search)
 }
 
