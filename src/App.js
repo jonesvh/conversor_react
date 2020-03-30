@@ -15,7 +15,7 @@ class App extends Component {
     super()
     this.state = {
       dolar: '',
-      euro: ''
+      euro: '',
     }
 
     const currentLocale = locales[navigator.language]
@@ -28,11 +28,13 @@ class App extends Component {
     })
   }
 
-  componentDidMount () {
-
+  ga = () =>{
+    console.log('ga')
     ReactGA.initialize('UA-162192560-01');
-    ReactGA.pageview(window.location.pathname + window.location.search);
+    ReactGA.pageview('/');
+  }
 
+  componentDidMount(){
     //localStorage.removeItem('cot')
     let ls = localStorage.getItem('cot')
     let lsMill = parseFloat(localStorage.getItem('cotMill'))
@@ -102,6 +104,13 @@ class App extends Component {
             <Conversor2></Conversor2>
           </div>
         </div>
+
+          <input
+            className="btn"
+            value="GA"
+            type="button"
+            onClick={this.ga}
+          ></input>
         <div className='footer'>
           <p className='itemFooter'>
             {intl.get('devby.dev')}: Jones Veriato Hoffstetter
