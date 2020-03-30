@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.54611740.chunk.css",
+    "main.css": "/static/css/main.ca7e4fc2.chunk.css",
     "main.js": "/static/js/main.a29e03bb.chunk.js",
     "main.js.map": "/static/js/main.a29e03bb.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.d4324ca5.js",
@@ -8,16 +8,16 @@
     "static/js/2.ba2de205.chunk.js": "/static/js/2.ba2de205.chunk.js",
     "static/js/2.ba2de205.chunk.js.map": "/static/js/2.ba2de205.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.2ccb0d59b3230fed0ede7a1aeecc4acc.js": "/precache-manifest.2ccb0d59b3230fed0ede7a1aeecc4acc.js",
+    "precache-manifest.2202bda5fb588ade745743614cfd27be.js": "/precache-manifest.2202bda5fb588ade745743614cfd27be.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/main.54611740.chunk.css.map": "/static/css/main.54611740.chunk.css.map",
+    "static/css/main.ca7e4fc2.chunk.css.map": "/static/css/main.ca7e4fc2.chunk.css.map",
     "static/js/2.ba2de205.chunk.js.LICENSE.txt": "/static/js/2.ba2de205.chunk.js.LICENSE.txt",
     "static/media/App.css": "/static/media/euroFlag.2440cad4.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.d4324ca5.js",
     "static/js/2.ba2de205.chunk.js",
-    "static/css/main.54611740.chunk.css",
+    "static/css/main.ca7e4fc2.chunk.css",
     "static/js/main.a29e03bb.chunk.js"
   ]
 }
