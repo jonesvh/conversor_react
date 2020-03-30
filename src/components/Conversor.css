@@ -50,6 +50,8 @@
     color: white;
     font-size: 20px;
     margin: 2px;
+    cursor: pointer;
+    outline: 0;
 }
 
 .result{
