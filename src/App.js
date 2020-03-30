@@ -81,7 +81,7 @@ class App extends Component {
         <div className='header'>
           <div className='title'>
             <div className='logo'></div>
-            <h3 className='textTitle'>augustinho</h3>
+            <h3 className='textTitle'>{intl.get('title.dsc')}</h3>
           </div>
           <div className='divCurr'>
             <div className='curr1'></div>
