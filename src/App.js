@@ -3,7 +3,6 @@ import './App.css'
 import Conversor from './components/Conversor'
 import Conversor2 from './components/Conversor2'
 import intl from 'react-intl-universal'
-import ReactGA from 'react-ga'
 
 const locales = {
   'pt-BR': require('./locales/pt-BR.json'),
@@ -15,7 +14,7 @@ class App extends Component {
     super()
     this.state = {
       dolar: '',
-      euro: '',
+      euro: ''
     }
 
     const currentLocale = locales[navigator.language]
@@ -28,13 +27,8 @@ class App extends Component {
     })
   }
 
-  ga = () =>{
-    console.log('ga')
-    ReactGA.initialize('UA-162192560-01');
-    ReactGA.pageview('/');
-  }
+  componentDidMount () {
 
-  componentDidMount(){
     //localStorage.removeItem('cot')
     let ls = localStorage.getItem('cot')
     let lsMill = parseFloat(localStorage.getItem('cotMill'))
@@ -104,13 +98,6 @@ class App extends Component {
             <Conversor2></Conversor2>
           </div>
         </div>
-
-          <input
-            className="btn"
-            value="GA"
-            type="button"
-            onClick={this.ga}
-          ></input>
         <div className='footer'>
           <p className='itemFooter'>
             {intl.get('devby.dev')}: Jones Veriato Hoffstetter

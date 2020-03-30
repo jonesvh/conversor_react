@@ -13,7 +13,7 @@ class Conversor extends Component {
 
     this.state = {
       moedaA_valor: 1, //para calcular
-      moedaB_valor: 0
+      moedaB_valor: 0,
     }
 
     const currentLocale = locales[navigator.language]
