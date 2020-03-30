@@ -5,11 +5,6 @@ import Conversor2 from './components/Conversor2'
 import intl from 'react-intl-universal'
 import ReactGA from 'react-ga'
 
-function initGA () {
-  ReactGA.initialize('UA-162192560-1')
-  ReactGA.pageview(window.location.pathname + window.location.search)
-}
-
 const locales = {
   'pt-BR': require('./locales/pt-BR.json'),
   'en-US': require('./locales/en-US.json')
@@ -32,8 +27,12 @@ class App extends Component {
       locales
     })
   }
+
   componentDidMount () {
-    initGA()
+
+    ReactGA.initialize('UA-162192560-01');
+    ReactGA.pageview(window.location.pathname + window.location.search);
+
     //localStorage.removeItem('cot')
     let ls = localStorage.getItem('cot')
     let lsMill = parseFloat(localStorage.getItem('cotMill'))

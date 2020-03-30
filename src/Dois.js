@@ -1,17 +1,12 @@
-import React, { Component } from 'react'
+import React, {useEffect} from 'react'
 import ReactGA from 'react-ga'
 
 function initGA () {
   ReactGA.initialize('UA-162192560-1')
-  ReactGA.pageview(window.location.pathname + window.location.search)
+  ReactGA.pageview('/dois')
 }
-class Dois extends Component {
-  componentDidMount () {
-    initGA()
-  }
-
-  render () {
+function Dois () {
+    useEffect(() => {initGA()}, [])
     return <div>oi</div>
-  }
 }
 export default Dois
