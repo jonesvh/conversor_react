@@ -7,7 +7,8 @@ import ReactGA from 'react-ga'
 
 function initGA () {
   ReactGA.initialize('G-NW0S6Z0CWF')
-  ReactGA.pageview(window.location.pathname + window.location.search)
+  //ReactGA.pageview(window.location.pathname + window.location.search)
+  ReactGA.pageview('/index.html')
 }
 
 const locales = {
