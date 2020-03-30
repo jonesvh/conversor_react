@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import './App.css'
-import Conversor from './components/Conversor'
 import Conversor2 from './components/Conversor2'
 import intl from 'react-intl-universal'
 
@@ -28,7 +27,6 @@ class App extends Component {
   }
 
   componentDidMount () {
-
     //localStorage.removeItem('cot')
     let ls = localStorage.getItem('cot')
     let lsMill = parseFloat(localStorage.getItem('cotMill'))
@@ -40,8 +38,9 @@ class App extends Component {
       localStorage.removeItem('cot')
       localStorage.removeItem('cotMill')
 
-      let from_to = 'USD_BRL,EUR_BRL'
-      let url = `https://free.currconv.com/api/v7/convert?apiKey=02a0baf4414a654a31db&q=${from_to}&compact=y`
+      let base = 'BRL'
+      let parm = 'USD,EUR'
+      let url = `https://api.exchangeratesapi.io/latest?base=${base}&symbols=${parm}`
 
       fetch(url)
         .then(res => {
@@ -52,19 +51,25 @@ class App extends Component {
           let date = new Date()
           localStorage.setItem('cotMill', date.getTime())
 
-          let cot1 = parseFloat(json.USD_BRL.val).toFixed(2)
-          let cot2 = parseFloat(json.EUR_BRL.val).toFixed(2)
+          let cot1 = parseFloat(json.rates.USD)
+          cot1 = (1 / cot1).toFixed(3)
+          let cot2 = parseFloat(json.rates.EUR)
+          cot2 = (1 / cot2).toFixed(3)
+
           this.setState({ dolar: cot1 })
           this.setState({ euro: cot2 })
 
           //console.log('buscou APP')
         })
     } else {
-      //console.log(ls)
+      console.log('storage')
       let json = JSON.parse(ls)
 
-      let cot1 = parseFloat(json.USD_BRL.val).toFixed(2)
-      let cot2 = parseFloat(json.EUR_BRL.val).toFixed(2)
+      let cot1 = parseFloat(json.rates.USD)
+      cot1 = (1 / cot1).toFixed(3)
+      let cot2 = parseFloat(json.rates.EUR)
+      cot2 = (1 / cot2).toFixed(3)
+
       this.setState({ dolar: cot1 })
       this.setState({ euro: cot2 })
     }
@@ -88,11 +93,6 @@ class App extends Component {
           </div>
         </div>
         <div className='body'>
-          <h3 className='title3'>{intl.get('example.dsc')}</h3>
-          <div className='item'>
-            <Conversor moedaA='USD' moedaB='BRL'></Conversor>
-            <Conversor moedaA='EUR' moedaB='BRL'></Conversor>
-          </div>
           <h3 className='title3'>{intl.get('tryyourself.dsc')}</h3>
           <div className='item'>
             <Conversor2></Conversor2>

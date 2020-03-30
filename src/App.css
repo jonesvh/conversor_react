@@ -60,11 +60,11 @@
     flex: 1;
     color:white;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 .textTitle{
-    flex: 1;
+    margin-left: 5px;
 }
 
 .logo{
@@ -89,6 +89,7 @@
 .body{
     flex:1;
     margin-bottom: 90px;
+    min-height:100%;
 }
 
 .footer{

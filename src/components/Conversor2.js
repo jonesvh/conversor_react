@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import Select from 'react-select'
 import './Conversor2.css'
+import './Conversor.css'
 import allCurrency from './json'
-import intl from 'react-intl-universal';
+import intl from 'react-intl-universal'
 
 const locales = {
   'pt-BR': require('../locales/pt-BR.json'),
@@ -20,7 +21,7 @@ export default class Conversor2 extends Component {
       currencies: [],
       iniValue: '{value: "ALL", label: "ALL"}'
     }
-     const currentLocale = locales[navigator.language]
+    const currentLocale = locales[navigator.language]
       ? navigator.language
       : 'pt-BR'
 
@@ -31,15 +32,6 @@ export default class Conversor2 extends Component {
   }
 
   componentDidMount () {
-    //let url = 'https://free.currconv.com/api/v7/currencies?apiKey=02a0baf4414a654a31db'
-    /*fetch(url)
-      .then(res => {
-        return res.json()
-      })
-      .then(json => {
-        this.setState({ currencies: json })
-      })*/
-
     let curr = Object.keys(allCurrency.results)
     let currencies = curr.map(c => {
       return { value: c, label: c }
@@ -51,23 +43,26 @@ export default class Conversor2 extends Component {
     if (!this.state.currency1 || !this.state.currency2 || !this.state.value) {
       alert(intl.get('msg.fillallinputs'))
     } else {
-      let from_to = `${this.state.currency1}_${this.state.currency2}`
-      let url = `https://free.currconv.com/api/v7/convert?apiKey=02a0baf4414a654a31db&q=${from_to}&compact=y`
-      //console.log(url)
+
+      let base = this.state.currency1
+      let parm = this.state.currency2
+      let url = `https://api.exchangeratesapi.io/latest?base=${base}&symbols=${parm}`
 
       fetch(url)
         .then(res => {
           return res.json()
         })
         .then(json => {
-          let cot = parseFloat(json[from_to].val)
-          //console.log(this.state.value)
-          let val = parseFloat(this.state.value)
-          let result = val * cot
-          result = result.toFixed(2)
-          this.setState({ result })
 
-          //console.log('buscou Conversor 2')
+          console.log(json)
+
+          let cot1 = parseFloat(json.rates[parm])
+          console.log(cot1)
+          let val = parseFloat(this.state.value)
+          console.log(val)
+          let result = (val * cot1).toFixed(2)
+          console.log(val)
+          this.setState({ result })
         })
     }
   }
@@ -91,10 +86,9 @@ export default class Conversor2 extends Component {
           <div className='currencies'>
             <Select
               //value={this.state.iniValue}
-              placeholder={intl.get("currency.one")}
+              placeholder={intl.get('currency.one')}
               className='select'
               onChange={ev => {
-
                 //console.log(ev)
                 this.setState({ currency1: ev.value })
               }}
@@ -103,7 +97,7 @@ export default class Conversor2 extends Component {
             <h3 className='title2'>-></h3>
             <Select
               //value={this.state.iniValue}
-              placeholder={intl.get("currency.two")}
+              placeholder={intl.get('currency.two')}
               className='select'
               onChange={ev => {
                 this.setState({ currency2: ev.value })
@@ -115,7 +109,7 @@ export default class Conversor2 extends Component {
             className='btn'
             onClick={this.convert}
             type='button'
-            value={intl.get("btn.convert")}
+            value={intl.get('btn.convert')}
           ></input>
           <input
             className='result'
