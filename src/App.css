@@ -91,16 +91,16 @@
 .textTitle3{
     flex: 1;
     color: #FFFFFF;
-    margin-bottom: 100px;
-    margin-top: 75px;
+    margin-bottom: 45px;
+    margin-top: 25px;
     font-size: 45px;
 }
 
 .textTitle2{
     flex: 1;
     color: #FFFFFF;
-    margin-bottom: 100px;
-    margin-top: 75px;
+    margin-bottom: 80px;
+    margin-top: 60px;
     font-size: 80px;
 }
 
@@ -157,6 +157,7 @@
     padding: 10px;
     justify-content: center;
     align-items: center;
+    margin-bottom: 80px;
 }
 
 .divItemContainer{

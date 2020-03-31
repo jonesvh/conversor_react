@@ -58,12 +58,13 @@
     flex: 1;
     width: 120px;
     height: 35px;
-    border-width: 1px;
+    border-width: 0px;
     border-radius: 5px;
     text-align: center;
     background-color: #29bc83;
     font-size: 20px;
     font-weight: bold;
-    color:#FFFFFF;
+    color:#000000;
     margin: 2px;
+    outline: 0;
 }
