@@ -3,11 +3,11 @@
     flex:1;
     flex-direction: column;
     justify-content: stretch;
-    padding: 20px;
-    margin: 10px;
-    border-width: 0px;
-    box-shadow: 1px 4px 8px 1px #035928;
     border-radius: 5px;
+    background-color: #FFFFFF;
+    padding: 10px;
+    max-width: 1000px;
+    min-height: 100px;
 }
 
 .inputs2{

@@ -12,7 +12,7 @@
 
 .title2{
     flex: 1;
-    color: #035928;
+    color: #FFFFFF;
 }
 
 .inputs2{
@@ -43,7 +43,7 @@
     flex: 1;
     width: 124px;
     height: 39px;
-    border-width: 1px;
+    border-width: 0px;
     border-radius: 5px;
     text-align: center;
     background-color: #035928;

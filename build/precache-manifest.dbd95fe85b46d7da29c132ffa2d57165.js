@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "8356c6b356d8d43e64021fecc2663bfd",
+    "revision": "b9a2039664029de25f11294d03c74f5a",
     "url": "/index.html"
   },
   {
-    "revision": "783375badbf6472beaa2",
-    "url": "/static/css/main.477f048e.chunk.css"
+    "revision": "2d02f1547483fa0c57b7",
+    "url": "/static/css/main.ee5b4b92.chunk.css"
   },
   {
-    "revision": "6e14fe10b88bad19c979",
-    "url": "/static/js/2.c5d9ceba.chunk.js"
+    "revision": "178f4232cd49ba75545f",
+    "url": "/static/js/2.af9b6903.chunk.js"
   },
   {
     "revision": "097290fd5f9309996cf6c672cbf11328",
-    "url": "/static/js/2.c5d9ceba.chunk.js.LICENSE.txt"
+    "url": "/static/js/2.af9b6903.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "783375badbf6472beaa2",
-    "url": "/static/js/main.2e0a8694.chunk.js"
+    "revision": "2d02f1547483fa0c57b7",
+    "url": "/static/js/main.dfdd677b.chunk.js"
   },
   {
     "revision": "4d3918f8d5d21693f110",
@@ -30,5 +30,9 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "2440cad42b0e2e2838f3259644b707a2",
     "url": "/static/media/euroFlag.2440cad4.jpg"
+  },
+  {
+    "revision": "b80ce3d8f18e2fecae490e93485e5b80",
+    "url": "/static/media/eurocentralbanklogo.b80ce3d8.png"
   }
 ]);

@@ -14,12 +14,11 @@ export default class Conversor2 extends Component {
   constructor () {
     super()
     this.state = {
-      value: '',
-      currency1: 0,
-      currency2: 0,
+      value: 1,
+      currency1: 'USD',
+      currency2: 'BRL',
       result: 0,
       currencies: [],
-      iniValue: '{value: "ALL", label: "ALL"}'
     }
     const currentLocale = locales[navigator.language]
       ? navigator.language
@@ -34,9 +33,10 @@ export default class Conversor2 extends Component {
   componentDidMount () {
     let curr = Object.keys(allCurrency.results)
     let currencies = curr.map(c => {
-      return { value: c, label: c }
+      return { label: c, value: c }
     })
     this.setState({ currencies })
+    this.convert()
   }
 
   convert = () => {
@@ -76,6 +76,7 @@ export default class Conversor2 extends Component {
           <input
             className='input'
             type='text'
+            value={this.state.value}
             onChange={ev => {
               ev.persist()
               const evnt = ev
@@ -85,6 +86,7 @@ export default class Conversor2 extends Component {
           ></input>
           <div className='currencies'>
             <Select
+              defaultValue={{label:'USD', value:'USD'}}
               //value={this.state.iniValue}
               placeholder={intl.get('currency.one')}
               className='select'
@@ -97,6 +99,7 @@ export default class Conversor2 extends Component {
             <h3 className='title2'>-></h3>
             <Select
               //value={this.state.iniValue}
+              defaultValue={{label:'BRL', value:'BRL'}}
               placeholder={intl.get('currency.two')}
               className='select'
               onChange={ev => {
