@@ -19,7 +19,8 @@ export default class Conversor2 extends Component {
       currency1: 'USD',
       currency2: 'BRL',
       result: 0,
-      currencies: []
+      currencies: [],
+      isVal1: true
     }
     const currentLocale = locales[navigator.language]
       ? navigator.language
@@ -42,7 +43,7 @@ export default class Conversor2 extends Component {
 
   convert = () => {
     if (!this.state.value || this.state.value === 0) {
-      this.setState({result:0})
+      this.setState({ result: 0 })
     } else {
       //} else {
       let base = this.state.currency1
@@ -54,15 +55,17 @@ export default class Conversor2 extends Component {
           return res.json()
         })
         .then(json => {
-          //console.log(json)
-
           let cot1 = parseFloat(json.rates[parm])
-          //console.log(cot1)
-          let val = parseFloat(this.state.value)
-          //console.log(val)
-          let result = (val * cot1).toFixed(2)
-          //console.log(val)
-          this.setState({ result })
+          let isVal1 = this.state.isVal1
+          if (isVal1) {
+            let val = parseFloat(this.state.value)
+            let result = (val * cot1).toFixed(2)
+            this.setState({ result })
+          } else {
+            let val = parseFloat(this.state.result)
+            let value = (val / cot1).toFixed(2)
+            this.setState({ value })
+          }
         })
     }
   }
@@ -99,10 +102,21 @@ export default class Conversor2 extends Component {
 
   setValue = async e => {
     this.setState({ value: e })
+    this.setState({ isVal1: true })
   }
 
   setValueAss = async e => {
     await this.setValue(e)
+    this.convert()
+  }
+
+  setValue2 = async e => {
+    this.setState({ result: e })
+    this.setState({ isVal1: false })
+  }
+
+  setValue2Ass = async e => {
+    await this.setValue2(e)
     this.convert()
   }
 
@@ -115,7 +129,7 @@ export default class Conversor2 extends Component {
           <input
             className='input'
             type='number'
-            inputMode="numeric"
+            inputMode='numeric'
             value={this.state.value}
             onChange={ev => {
               ev.persist()
@@ -126,6 +140,7 @@ export default class Conversor2 extends Component {
           ></input>
           <div className='currencies'>
             <Select
+              isSearchable={false}
               defaultValue={{ label: 'USD', value: 'USD' }}
               value={{
                 label: this.state.currency1,
@@ -145,10 +160,11 @@ export default class Conversor2 extends Component {
                 }}
                 src={logoSwap}
                 className='logoSwapImg'
-                alt="swap"
+                alt='swap'
               ></img>
             </div>
             <Select
+              isSearchable={false}
               value={{
                 label: this.state.currency2,
                 value: this.state.currency2
@@ -163,10 +179,16 @@ export default class Conversor2 extends Component {
             ></Select>
           </div>
           <input
-            className='result'
-            type='text'
+            className='input'
+            type='number'
+            inputMode='numeric'
             value={this.state.result}
-            disabled={true}
+            onChange={ev => {
+              ev.persist()
+              const evnt = ev
+              var val = evnt.target.value.replace(',', '.')
+              this.setValue2Ass(val)
+            }}
           ></input>
         </div>
       </div>
