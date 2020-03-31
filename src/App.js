@@ -110,9 +110,15 @@ class App extends Component {
               >
                 {matches => (
                   <Fragment>
-                    {matches.small && <h3 className='textTitle3'>{intl.get('title.dsc')}</h3>}
-                    {matches.medium && <h2 className='textTitle2'>{intl.get('title.dsc')}</h2>}
-                    {matches.large && <h1 className='textTitle1'>{intl.get('title.dsc')}</h1>}
+                    {matches.small && (
+                      <h3 className='textTitle3'>{intl.get('title.dsc')}</h3>
+                    )}
+                    {matches.medium && (
+                      <h2 className='textTitle2'>{intl.get('title.dsc')}</h2>
+                    )}
+                    {matches.large && (
+                      <h1 className='textTitle1'>{intl.get('title.dsc')}</h1>
+                    )}
                   </Fragment>
                 )}
               </Media>
@@ -121,11 +127,46 @@ class App extends Component {
           <div className='item'>
             <Conversor2></Conversor2>
           </div>
-          <div className='content'>
-            <p className='itemContent'>
-              Faça suas conversões usando sempre as cotações mais atuais
-              publicadas diretamento pelo Banco Central Europeu!
-            </p>
+          <div>
+            <Media
+              queries={{
+                small: '(max-width: 599px)',
+                medium: '(min-width: 600px) and (max-width: 1199px)',
+                large: '(min-width: 1200px)'
+              }}
+            >
+              {matches => (
+                <Fragment>
+                  {matches.small && (
+                    <p className='content3'>
+                      <p className='itemContent'>
+                        Faça suas conversões usando sempre as cotações mais
+                        atuais publicadas diretamento pelo Banco Central
+                        Europeu!
+                      </p>
+                    </p>
+                  )}
+                  {matches.medium && (
+                    <p className='content2'>
+                      <p className='itemContent'>
+                        Faça suas conversões usando sempre as cotações mais
+                        atuais publicadas diretamento pelo Banco Central
+                        Europeu!
+                      </p>
+                    </p>
+                  )}
+                  {matches.large && (
+                    <p className='content1'>
+                      <p className='itemContent'>
+                        Faça suas conversões usando sempre as cotações mais
+                        atuais publicadas diretamento pelo Banco Central
+                        Europeu!
+                      </p>
+                    </p>
+                  )}
+                </Fragment>
+              )}
+            </Media>
           </div>
         </div>
         <div className='container'>
