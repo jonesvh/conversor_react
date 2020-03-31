@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.c045d1e1.chunk.css",
-    "main.js": "/static/js/main.fcf4c5c0.chunk.js",
-    "main.js.map": "/static/js/main.fcf4c5c0.chunk.js.map",
+    "main.css": "/static/css/main.a270f612.chunk.css",
+    "main.js": "/static/js/main.9c1ec972.chunk.js",
+    "main.js.map": "/static/js/main.9c1ec972.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.d4324ca5.js",
     "runtime-main.js.map": "/static/js/runtime-main.d4324ca5.js.map",
     "static/js/2.5ea3b573.chunk.js": "/static/js/2.5ea3b573.chunk.js",
     "static/js/2.5ea3b573.chunk.js.map": "/static/js/2.5ea3b573.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.9a851fee661a97ce2f49e1ed759676b2.js": "/precache-manifest.9a851fee661a97ce2f49e1ed759676b2.js",
+    "precache-manifest.66fabdff4f00ca5565c7002b96393e94.js": "/precache-manifest.66fabdff4f00ca5565c7002b96393e94.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/main.c045d1e1.chunk.css.map": "/static/css/main.c045d1e1.chunk.css.map",
+    "static/css/main.a270f612.chunk.css.map": "/static/css/main.a270f612.chunk.css.map",
     "static/js/2.5ea3b573.chunk.js.LICENSE.txt": "/static/js/2.5ea3b573.chunk.js.LICENSE.txt",
     "static/media/App.css": "/static/media/euroFlag.2440cad4.jpg",
     "static/media/logotravel.png": "/static/media/logotravel.971bf3fb.png",
@@ -19,7 +19,7 @@
   "entrypoints": [
     "static/js/runtime-main.d4324ca5.js",
     "static/js/2.5ea3b573.chunk.js",
-    "static/css/main.c045d1e1.chunk.css",
-    "static/js/main.fcf4c5c0.chunk.js"
+    "static/css/main.a270f612.chunk.css",
+    "static/js/main.9c1ec972.chunk.js"
   ]
 }
