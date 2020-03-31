@@ -1,8 +1,13 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import './App.css'
 import Conversor2 from './components/Conversor2'
 import intl from 'react-intl-universal'
+import Media from 'react-media'
+
 import logo from './assets/eurocentralbanklogo.png'
+import logoMoney from './assets/moneyuplogo.png'
+import logoTravel from './assets/logotravel.png'
+
 const locales = {
   'pt-BR': require('./locales/pt-BR.json'),
   'en-US': require('./locales/en-US.json')
@@ -62,7 +67,7 @@ class App extends Component {
           //console.log('buscou APP')
         })
     } else {
-      console.log('storage')
+      //console.log('storage')
       let json = JSON.parse(ls)
 
       let cot1 = parseFloat(json.rates.USD)
@@ -95,7 +100,23 @@ class App extends Component {
             </div>
           </div>
           <div className='title'>
-            <h1 className='textTitle'>{intl.get('title.dsc')}</h1>
+            <div>
+              <Media
+                queries={{
+                  small: '(max-width: 599px)',
+                  medium: '(min-width: 600px) and (max-width: 1199px)',
+                  large: '(min-width: 1200px)'
+                }}
+              >
+                {matches => (
+                  <Fragment>
+                    {matches.small && <h3 className='textTitle3'>{intl.get('title.dsc')}</h3>}
+                    {matches.medium && <h2 className='textTitle2'>{intl.get('title.dsc')}</h2>}
+                    {matches.large && <h1 className='textTitle1'>{intl.get('title.dsc')}</h1>}
+                  </Fragment>
+                )}
+              </Media>
+            </div>
           </div>
           <div className='item'>
             <Conversor2></Conversor2>
@@ -109,20 +130,48 @@ class App extends Component {
         </div>
         <div className='container'>
           <p className='itemContainer'>
-            Coloque um valor, selecione as moedas para qual deseja converter e tenha imediatamente o resultado
-            com base nas cotações publicadas pelo Banco Central Europeu.
+            Coloque um valor, selecione as moedas para qual deseja converter e
+            tenha imediatamente o resultado com base nas cotações publicadas
+            pelo{' '}
+            {
+              <a
+                className='externalLink'
+                href='https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html'
+                target='_blank'
+                rel='noopener noreferrer'
+              >
+                Banco Central Europeu.
+              </a>
+            }
           </p>
-          <div className="logoBank">
-          <img src={logo} className="logoBankImg"></img>
+          <div className='logoBank'>
+            <img src={logo} className='logoBankImg' alt='europe bank'></img>
+          </div>
+          <p className='itemConteinerTitle'>Cuide do seu dinheiro</p>
+          <div className='logoMoney'>
+            <img src={logoMoney} className='logoMoneyImg' alt='money'></img>
           </div>
           <p className='itemContainer'>
-            Para além de saber, exatamente, o valor
-            após a conversão em moeda estrangeira, o conversor é relevante para,
-            por exemplo, encontrar a maneira mais barata e segura de enviar ou
-            de receber dinheiro do exterior, o que, dessa forma, torna o
-            planejamento das finanças mais exato. Sabe-se que o mercado é
-            instável, e o valor das moedas muda constantemente, portanto é mais
-            seguro converter através de valores atualizados diariamente.
+            Além de saber, exatamente, o valor após a conversão em moeda
+            estrangeira, o conversor vai auxiliar você para, por exemplo,
+            encontrar a maneira mais barata e segura de enviar ou de receber
+            dinheiro do exterior, o que, dessa forma, torna o planejamento das
+            finanças mais exato.
+          </p>
+          <p className='itemConteinerTitle'>Viaje tranquilo</p>
+          <div className='logoTravel'>
+            <img
+              src={logoTravel}
+              className='logoTravelImgbaah'
+              alt='travel'
+            ></img>
+          </div>
+          <p className='itemContainer'>
+            Fique mais tranquilo quando for fazer aquela viagem ao exterior,
+            sabendo exatamente quanto dinheiro deve levar, evitando dor de
+            cabeça. Sabe-se que o mercado é instável, e o valor das moedas muda
+            constantemente, portanto é mais seguro converter através de valores
+            atualizados diariamente.
           </p>
         </div>
         <div className='footer'>

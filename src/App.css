@@ -18,7 +18,7 @@
     flex: 1;
     display: flex;
     flex-direction: column;
-    background-color: #035928;
+    background-color: #219669;
     padding: 10px;
 }
 
@@ -88,7 +88,23 @@
     
 }
 
-.textTitle{
+.textTitle3{
+    flex: 1;
+    color: #FFFFFF;
+    margin-bottom: 100px;
+    margin-top: 75px;
+    font-size: 45px;
+}
+
+.textTitle2{
+    flex: 1;
+    color: #FFFFFF;
+    margin-bottom: 100px;
+    margin-top: 75px;
+    font-size: 80px;
+}
+
+.textTitle1{
     flex: 1;
     color: #FFFFFF;
     margin-bottom: 100px;
@@ -143,29 +159,60 @@
     align-items: center;
 }
 
+.divItemContainer{
+    display: flex;
+    flex: 1;
+    border-bottom: 1px solid #219669;
+    width: 100%;
+}
+
+.logoMoney{
+    flex: 1;
+} 
+
+.logoMoneyImg{
+    width: 200px;
+}
+
+.logoTravel{
+    flex: 1;
+} 
+
+.logoTravelImg{
+    width: 200px;
+}
+
 .itemContainer{
     flex: 1;
     max-width: 1000px;
     font-size: 30px;
-    color: #035928;
+    color: #000000;
     font-weight: 500;
     padding-bottom: 15px;
+}
+
+
+.itemConteinerTitle{
+    flex: 1;
+    max-width: 1000px;
+    font-size: 45px;
+    color: #219669;
 }
 
 .logoBank{
     flex: 1;
     max-width: 1000px;
     font-size: 30px;
-    color: #035928;
-    font-weight: 500;
+    color: #219669;
+    font-weight: 400;
     padding-bottom: 15px;
 
-    border-bottom: 1px solid #035928;
+    border-bottom: 1px solid #219669;
     width: 100%;
 } 
 
 .logoBankImg{
-    width: 300px;
+    width: 200px;
 }
 
 .footer{
@@ -175,9 +222,14 @@
     align-items: center;
     justify-content: center;
     height: 80px;
-    background-color: #94F29A;
+    background-color: #29bc83;
 }
 
 .itemFooter{
     flex: 1;
+}
+
+.externalLink{
+    text-decoration-color: #0073cf;
+    color: #0073cf;
 }

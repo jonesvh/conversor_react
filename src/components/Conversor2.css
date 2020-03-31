@@ -38,3 +38,11 @@
     width: 130px;
     min-width: 115px;
 }
+
+.logoSwap{
+    flex: 1;
+} 
+
+.logoSwapImg{
+    width: 40px;
+}

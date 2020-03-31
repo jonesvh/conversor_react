@@ -6,7 +6,7 @@
     padding: 20px;
     margin: 10px;
     border-width: 0px;
-    box-shadow: 1px 4px 8px 1px #035928;
+    box-shadow: 1px 4px 8px 1px #219669;
     border-radius: 5px;
 }
 
@@ -33,7 +33,7 @@
     border-radius: 5px;
     text-align: center;
     background-color: white;
-    color: #035928;
+    color: #219669;
     font-size: 25px;
     font-weight: bold;
     margin: 2px;
@@ -46,7 +46,7 @@
     border-width: 0px;
     border-radius: 5px;
     text-align: center;
-    background-color: #035928;
+    background-color: #219669;
     color: white;
     font-size: 20px;
     margin: 2px;
@@ -61,9 +61,9 @@
     border-width: 1px;
     border-radius: 5px;
     text-align: center;
-    background-color: #94F29A;
+    background-color: #29bc83;
     font-size: 20px;
     font-weight: bold;
-    color: #035928;
+    color:#FFFFFF;
     margin: 2px;
 }

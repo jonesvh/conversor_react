@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "b9a2039664029de25f11294d03c74f5a",
+    "revision": "cdd30f210166d042814eea194c6d2f7d",
     "url": "/index.html"
   },
   {
-    "revision": "2d02f1547483fa0c57b7",
-    "url": "/static/css/main.ee5b4b92.chunk.css"
+    "revision": "b1342957463f10c51af9",
+    "url": "/static/css/main.33c26b3c.chunk.css"
   },
   {
-    "revision": "178f4232cd49ba75545f",
-    "url": "/static/js/2.af9b6903.chunk.js"
+    "revision": "4e02af5501c45341f23e",
+    "url": "/static/js/2.c48013d2.chunk.js"
   },
   {
     "revision": "097290fd5f9309996cf6c672cbf11328",
-    "url": "/static/js/2.af9b6903.chunk.js.LICENSE.txt"
+    "url": "/static/js/2.c48013d2.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "2d02f1547483fa0c57b7",
-    "url": "/static/js/main.dfdd677b.chunk.js"
+    "revision": "b1342957463f10c51af9",
+    "url": "/static/js/main.ccd51f41.chunk.js"
   },
   {
     "revision": "4d3918f8d5d21693f110",
@@ -34,5 +34,13 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "b80ce3d8f18e2fecae490e93485e5b80",
     "url": "/static/media/eurocentralbanklogo.b80ce3d8.png"
+  },
+  {
+    "revision": "971bf3fb5de792cb7f964e7edc5c0dc8",
+    "url": "/static/media/logotravel.971bf3fb.png"
+  },
+  {
+    "revision": "3b0cdaff43d78510134032e4f5db00e5",
+    "url": "/static/media/moneyuplogo.3b0cdaff.png"
   }
 ]);
