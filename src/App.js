@@ -110,15 +110,9 @@ class App extends Component {
               >
                 {matches => (
                   <Fragment>
-                    {matches.small && (
-                      <h3 className='textTitle3'>{intl.get('title.dsc')}</h3>
-                    )}
-                    {matches.medium && (
-                      <h2 className='textTitle2'>{intl.get('title.dsc')}</h2>
-                    )}
-                    {matches.large && (
-                      <h1 className='textTitle1'>{intl.get('title.dsc')}</h1>
-                    )}
+                    {matches.small && <h3 className='textTitle3'>{intl.get('title.dsc')}</h3>}
+                    {matches.medium && <h2 className='textTitle2'>{intl.get('title.dsc')}</h2>}
+                    {matches.large && <h1 className='textTitle1'>{intl.get('title.dsc')}</h1>}
                   </Fragment>
                 )}
               </Media>
@@ -138,31 +132,31 @@ class App extends Component {
               {matches => (
                 <Fragment>
                   {matches.small && (
-                    <p className='content3'>
+                    <div className='content3'>
                       <p className='itemContent'>
                         Faça suas conversões usando sempre as cotações mais
                         atuais publicadas diretamento pelo Banco Central
                         Europeu!
                       </p>
-                    </p>
+                    </div>
                   )}
                   {matches.medium && (
-                    <p className='content2'>
+                    <div className='content2'>
                       <p className='itemContent'>
                         Faça suas conversões usando sempre as cotações mais
                         atuais publicadas diretamento pelo Banco Central
                         Europeu!
                       </p>
-                    </p>
+                    </div>
                   )}
                   {matches.large && (
-                    <p className='content1'>
+                    <div className='content1'>
                       <p className='itemContent'>
                         Faça suas conversões usando sempre as cotações mais
                         atuais publicadas diretamento pelo Banco Central
                         Europeu!
                       </p>
-                    </p>
+                    </div>
                   )}
                 </Fragment>
               )}
