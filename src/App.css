@@ -92,8 +92,8 @@
 .textTitle3{
     flex: 1;
     color: #FFFFFF;
-    margin-bottom: 25px;
-    margin-top: 25px;
+    margin-bottom: 10px;
+    margin-top: 10px;
     font-size: 45px;
     max-height: 70px;
 }
@@ -101,8 +101,8 @@
 .textTitle2{
     flex: 1;
     color: #FFFFFF;
-    margin-bottom: 80px;
-    margin-top: 60px;
+    margin-bottom: 50px;
+    margin-top: 30px;
     font-size: 80px;
     max-height: 100px;
 }
@@ -139,7 +139,7 @@
     flex: 1;
     display: flex;
     flex-direction: column;
-    margin-bottom: 40px;
+    margin-bottom: 10px;
     padding: 10px;
     justify-content: center;
     align-items: center;
