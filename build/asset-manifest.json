@@ -1,26 +1,25 @@
 {
   "files": {
-    "main.css": "/static/css/main.f1895f81.chunk.css",
-    "main.js": "/static/js/main.ea61190c.chunk.js",
-    "main.js.map": "/static/js/main.ea61190c.chunk.js.map",
+    "main.css": "/static/css/main.c045d1e1.chunk.css",
+    "main.js": "/static/js/main.fcf4c5c0.chunk.js",
+    "main.js.map": "/static/js/main.fcf4c5c0.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.d4324ca5.js",
     "runtime-main.js.map": "/static/js/runtime-main.d4324ca5.js.map",
     "static/js/2.5ea3b573.chunk.js": "/static/js/2.5ea3b573.chunk.js",
     "static/js/2.5ea3b573.chunk.js.map": "/static/js/2.5ea3b573.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.814be8ca11eb575a494622d2d64d016b.js": "/precache-manifest.814be8ca11eb575a494622d2d64d016b.js",
+    "precache-manifest.9a851fee661a97ce2f49e1ed759676b2.js": "/precache-manifest.9a851fee661a97ce2f49e1ed759676b2.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/main.f1895f81.chunk.css.map": "/static/css/main.f1895f81.chunk.css.map",
+    "static/css/main.c045d1e1.chunk.css.map": "/static/css/main.c045d1e1.chunk.css.map",
     "static/js/2.5ea3b573.chunk.js.LICENSE.txt": "/static/js/2.5ea3b573.chunk.js.LICENSE.txt",
     "static/media/App.css": "/static/media/euroFlag.2440cad4.jpg",
-    "static/media/eurocentralbanklogo.png": "/static/media/eurocentralbanklogo.b80ce3d8.png",
     "static/media/logotravel.png": "/static/media/logotravel.971bf3fb.png",
-    "static/media/moneyuplogo.png": "/static/media/moneyuplogo.3b0cdaff.png"
+    "static/media/moneyuplogo.png": "/static/media/moneyuplogo.4c8d5fc5.png"
   },
   "entrypoints": [
     "static/js/runtime-main.d4324ca5.js",
     "static/js/2.5ea3b573.chunk.js",
-    "static/css/main.f1895f81.chunk.css",
-    "static/js/main.ea61190c.chunk.js"
+    "static/css/main.c045d1e1.chunk.css",
+    "static/js/main.fcf4c5c0.chunk.js"
   ]
 }
