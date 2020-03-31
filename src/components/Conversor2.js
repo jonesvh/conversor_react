@@ -114,7 +114,8 @@ export default class Conversor2 extends Component {
         <div className='inputs2'>
           <input
             className='input'
-            type='text'
+            type='number'
+            inputMode="numeric"
             value={this.state.value}
             onChange={ev => {
               ev.persist()

@@ -223,6 +223,9 @@
     justify-content: center;
     max-height: 80px;
     background-color: #29bc83;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
 
 .itemFooter{
