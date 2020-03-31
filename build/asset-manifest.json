@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.33b83055.chunk.css",
+    "main.css": "/static/css/main.ec174e07.chunk.css",
     "main.js": "/static/js/main.aecd8f6d.chunk.js",
     "main.js.map": "/static/js/main.aecd8f6d.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.d4324ca5.js",
@@ -8,9 +8,9 @@
     "static/js/2.5ea3b573.chunk.js": "/static/js/2.5ea3b573.chunk.js",
     "static/js/2.5ea3b573.chunk.js.map": "/static/js/2.5ea3b573.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.4ea43a80eb5f56d17d1db5a9ed3bdf52.js": "/precache-manifest.4ea43a80eb5f56d17d1db5a9ed3bdf52.js",
+    "precache-manifest.fcc0587150c60363db744a7ffc4692b1.js": "/precache-manifest.fcc0587150c60363db744a7ffc4692b1.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/main.33b83055.chunk.css.map": "/static/css/main.33b83055.chunk.css.map",
+    "static/css/main.ec174e07.chunk.css.map": "/static/css/main.ec174e07.chunk.css.map",
     "static/js/2.5ea3b573.chunk.js.LICENSE.txt": "/static/js/2.5ea3b573.chunk.js.LICENSE.txt",
     "static/media/App.css": "/static/media/euroFlag.2440cad4.jpg",
     "static/media/eurocentralbanklogo.png": "/static/media/eurocentralbanklogo.b80ce3d8.png",
@@ -20,7 +20,7 @@
   "entrypoints": [
     "static/js/runtime-main.d4324ca5.js",
     "static/js/2.5ea3b573.chunk.js",
-    "static/css/main.33b83055.chunk.css",
+    "static/css/main.ec174e07.chunk.css",
     "static/js/main.aecd8f6d.chunk.js"
   ]
 }
