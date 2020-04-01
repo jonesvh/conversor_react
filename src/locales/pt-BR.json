@@ -1,25 +1,27 @@
 {
   "title": {
-    "dsc": "Converte Moeda"
+    "dsc": "Conversor de Moeda"
   },
-  "example":{
-    "dsc": "Exemplo"
-  },
-  "tryyourself": {
-    "dsc": "Faça sua conversão"
-  },
-  "devby":{
+  "devby": {
     "dev": "Desenvolvido por",
     "hints": "Dicas"
   },
-  "btn":{
+  "btn": {
     "convert": "Converter"
   },
-  "currency":{
-    "one": "Moeda 1",
-    "two": "Moeda 2"
+  "content": {
+    "msg1": "Faça suas conversões usando sempre as cotações mais atuais publicadas diretamento pelo Banco Central Europeu."
   },
-  "msg": {
-    "fillallinputs": "Você deve preencher o VALOR e as MOEDAS para conversão"
+  "container": {
+    "msg1": "Coloque um valor, selecione as moedas para qual deseja converter e tenha imediatamente o resultado com base nas cotações publicadas pelo",
+    "msg2": "Banco Central Europeu."
+  },
+  "container2": {
+    "msg1": "Cuide do seu dinheiro",
+    "msg2": "Além de saber, exatamente, o valor após a conversão em moeda estrangeira, o conversor vai auxiliar você para, por exemplo, encontrar a maneira mais barata e segura de enviar ou de receber dinheiro do exterior, o que, dessa forma, torna o planejamento das finanças mais exato."
+  },
+  "container3":{
+    "msg1": "Viaje tranquilo",
+    "msg2": "Fique mais tranquilo quando for fazer aquela viagem ao exterior, sabendo exatamente quanto dinheiro deve levar, evitando dor de cabeça. Sabe-se que o mercado é instável, e o valor das moedas muda constantemente, portanto é mais seguro converter através de valores atualizados diariamente."
   }
 }

@@ -4,9 +4,14 @@ import Conversor2 from './components/Conversor2'
 import intl from 'react-intl-universal'
 import Media from 'react-media'
 
-import logo from './assets/eurocentralbanklogo.png'
-import logoMoney from './assets/moneyuplogo.png'
-import logoTravel from './assets/logotravel.png'
+import logo from './assets/eurocentralbanklogo.jpg'
+import logoMoney from './assets/moneyuplogo.jpg'
+import logoTravel from './assets/logotravel.jpg'
+
+import euaFlag from './assets/euaFlag.jpg'
+import euroFlag from './assets/euroFlag.jpg'
+import brazilFlag from './assets/brazilFlag.jpg'
+import ukFlag from './assets/ukFlag.jpg'
 
 const locales = {
   'pt-BR': require('./locales/pt-BR.json'),
@@ -17,8 +22,9 @@ class App extends Component {
   constructor () {
     super()
     this.state = {
-      dolar: '',
-      euro: ''
+      quoete1: '',
+      quoete2: '',
+      quoete3: ''
     }
 
     const currentLocale = locales[navigator.language]
@@ -32,20 +38,34 @@ class App extends Component {
   }
 
   componentDidMount () {
-    //localStorage.removeItem('cot')
+    let base = ''
+    let parm1 = ''
+    let parm2 = ''
+    let parm3 = ''
+    if (navigator.language === 'pt-BR') {
+      base = 'BRL'
+      parm1 = 'USD'
+      parm2 = 'EUR'
+      parm3 = 'GBP'
+    } else {
+      base = 'USD'
+      parm1 = 'EUR'
+      parm2 = 'GBP'
+      parm3 = 'BRL'
+    }
+
+    localStorage.removeItem('cot')
     let ls = localStorage.getItem('cot')
     let lsMill = parseFloat(localStorage.getItem('cotMill'))
     lsMill += 3600000
     let atualdate = new Date()
+
     //console.log(lsMill - atualdate.getTime())
     if (!ls || atualdate.getTime() > lsMill) {
       //console.log('buscou')
       localStorage.removeItem('cot')
       localStorage.removeItem('cotMill')
-
-      let base = 'BRL'
-      let parm = 'USD,EUR'
-      let url = `https://api.exchangeratesapi.io/latest?base=${base}&symbols=${parm}`
+      let url = `https://api.exchangeratesapi.io/latest?base=${base}&symbols=${parm1},${parm2},${parm3}`
 
       fetch(url)
         .then(res => {
@@ -56,13 +76,20 @@ class App extends Component {
           let date = new Date()
           localStorage.setItem('cotMill', date.getTime())
 
-          let cot1 = parseFloat(json.rates.USD)
-          cot1 = (1 / cot1).toFixed(3)
-          let cot2 = parseFloat(json.rates.EUR)
-          cot2 = (1 / cot2).toFixed(3)
+          //console.log(json.rates[parm1], json.rates[parm2], json)
 
-          this.setState({ dolar: cot1 })
-          this.setState({ euro: cot2 })
+          let cot1 = parseFloat(json.rates[parm1])
+          cot1 = (1 / cot1).toFixed(3)
+          let cot2 = parseFloat(json.rates[parm2])
+          cot2 = (1 / cot2).toFixed(3)
+          let cot3 = parseFloat(json.rates[parm3])
+          cot3 = (1 / cot3).toFixed(3)
+
+          //console.log(cot1, cot2)
+
+          this.setState({ quoete1: cot1 })
+          this.setState({ quoete2: cot2 })
+          this.setState({ quoete3: cot3 })
 
           //console.log('buscou APP')
         })
@@ -70,13 +97,16 @@ class App extends Component {
       //console.log('storage')
       let json = JSON.parse(ls)
 
-      let cot1 = parseFloat(json.rates.USD)
+      let cot1 = parseFloat(json.rates[parm1])
       cot1 = (1 / cot1).toFixed(3)
-      let cot2 = parseFloat(json.rates.EUR)
+      let cot2 = parseFloat(json.rates[parm2])
       cot2 = (1 / cot2).toFixed(3)
+      let cot3 = parseFloat(json.rates[parm3])
+      cot3 = (1 / cot3).toFixed(3)
 
-      this.setState({ dolar: cot1 })
-      this.setState({ euro: cot2 })
+      this.setState({ quoete1: cot1 })
+      this.setState({ quoete2: cot2 })
+      this.setState({ quoete3: cot3 })
     }
   }
 
@@ -89,12 +119,52 @@ class App extends Component {
               <div className='logo'></div>
               <div className='topCurr'>
                 <div className='divCurr'>
-                  <div className='curr1'></div>
-                  <p className='textCurr'>{this.state.dolar}</p>
+                  {navigator.language === 'pt-BR' ? (
+                    <img
+                      src={euaFlag}
+                      className='countryImg'
+                      alt='eua flag'
+                    ></img>
+                  ) : (
+                    <img
+                      src={euroFlag}
+                      className='countryImg'
+                      alt='euro flag'
+                    ></img>
+                  )}
+                  <p className='textCurr'>{this.state.quoete1}</p>
                 </div>
                 <div className='divCurr'>
-                  <div className='curr2'></div>
-                  <p className='textCurr'>{this.state.euro}</p>
+                  {navigator.language === 'pt-BR' ? (
+                    <img
+                      src={euroFlag}
+                      className='countryImg'
+                      alt='eua flag'
+                    ></img>
+                  ) : (
+                    <img
+                      src={ukFlag}
+                      className='countryImg'
+                      alt='uk flag'
+                    ></img>
+                  )}
+                  <p className='textCurr'>{this.state.quoete2}</p>
+                </div>
+                <div className='divCurr'>
+                  {navigator.language === 'pt-BR' ? (
+                    <img
+                      src={ukFlag}
+                      className='countryImg'
+                      alt='euro flag'
+                    ></img>
+                  ) : (
+                    <img
+                      src={brazilFlag}
+                      className='countryImg'
+                      alt='brazil flag'
+                    ></img>
+                  )}
+                  <p className='textCurr'>{this.state.quoete3}</p>
                 </div>
               </div>
             </div>
@@ -110,9 +180,15 @@ class App extends Component {
               >
                 {matches => (
                   <Fragment>
-                    {matches.small && <h3 className='textTitle3'>{intl.get('title.dsc')}</h3>}
-                    {matches.medium && <h2 className='textTitle2'>{intl.get('title.dsc')}</h2>}
-                    {matches.large && <h1 className='textTitle1'>{intl.get('title.dsc')}</h1>}
+                    {matches.small && (
+                      <h3 className='textTitle3'>{intl.get('title.dsc')}</h3>
+                    )}
+                    {matches.medium && (
+                      <h2 className='textTitle2'>{intl.get('title.dsc')}</h2>
+                    )}
+                    {matches.large && (
+                      <h1 className='textTitle1'>{intl.get('title.dsc')}</h1>
+                    )}
                   </Fragment>
                 )}
               </Media>
@@ -133,29 +209,17 @@ class App extends Component {
                 <Fragment>
                   {matches.small && (
                     <div className='content3'>
-                      <p className='itemContent'>
-                        Faça suas conversões usando sempre as cotações mais
-                        atuais publicadas diretamento pelo Banco Central
-                        Europeu!
-                      </p>
+                      <p className='itemContent'>{intl.get('content.msg1')}</p>
                     </div>
                   )}
                   {matches.medium && (
                     <div className='content2'>
-                      <p className='itemContent'>
-                        Faça suas conversões usando sempre as cotações mais
-                        atuais publicadas diretamento pelo Banco Central
-                        Europeu!
-                      </p>
+                      <p className='itemContent'>{intl.get('content.msg1')}</p>
                     </div>
                   )}
                   {matches.large && (
                     <div className='content1'>
-                      <p className='itemContent'>
-                        Faça suas conversões usando sempre as cotações mais
-                        atuais publicadas diretamento pelo Banco Central
-                        Europeu!
-                      </p>
+                      <p className='itemContent'>{intl.get('content.msg1')}</p>
                     </div>
                   )}
                 </Fragment>
@@ -165,9 +229,7 @@ class App extends Component {
         </div>
         <div className='container'>
           <p className='itemContainer'>
-            Coloque um valor, selecione as moedas para qual deseja converter e
-            tenha imediatamente o resultado com base nas cotações publicadas
-            pelo{' '}
+            {intl.get('container.msg1')}{' '}
             {
               <a
                 className='externalLink'
@@ -175,25 +237,19 @@ class App extends Component {
                 target='_blank'
                 rel='noopener noreferrer'
               >
-                Banco Central Europeu.
+                {intl.get('container.msg2')}
               </a>
             }
           </p>
           <div className='logoBank'>
             <img src={logo} className='logoBankImg' alt='europe bank'></img>
           </div>
-          <p className='itemConteinerTitle'>Cuide do seu dinheiro</p>
+          <p className='itemConteinerTitle'>{intl.get('container2.msg1')}</p>
           <div className='logoMoney'>
             <img src={logoMoney} className='logoMoneyImg' alt='money'></img>
           </div>
-          <p className='itemContainer'>
-            Além de saber, exatamente, o valor após a conversão em moeda
-            estrangeira, o conversor vai auxiliar você para, por exemplo,
-            encontrar a maneira mais barata e segura de enviar ou de receber
-            dinheiro do exterior, o que, dessa forma, torna o planejamento das
-            finanças mais exato.
-          </p>
-          <p className='itemConteinerTitle'>Viaje tranquilo</p>
+          <p className='itemContainer'>{intl.get('container2.msg2')}</p>
+          <p className='itemConteinerTitle'>{intl.get('container3.msg1')}</p>
           <div className='logoTravel'>
             <img
               src={logoTravel}
@@ -201,13 +257,7 @@ class App extends Component {
               alt='travel'
             ></img>
           </div>
-          <p className='itemContainer'>
-            Fique mais tranquilo quando for fazer aquela viagem ao exterior,
-            sabendo exatamente quanto dinheiro deve levar, evitando dor de
-            cabeça. Sabe-se que o mercado é instável, e o valor das moedas muda
-            constantemente, portanto é mais seguro converter através de valores
-            atualizados diariamente.
-          </p>
+          <p className='itemContainer'>{intl.get('container3.msg2')}</p>
         </div>
         <div className='footer'>
           <p className='itemFooter'>

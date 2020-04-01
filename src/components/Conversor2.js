@@ -16,8 +16,8 @@ export default class Conversor2 extends Component {
     super()
     this.state = {
       value: 1,
-      currency1: 'USD',
-      currency2: 'BRL',
+      currency1: '',
+      currency2: '',
       result: 0,
       currencies: [],
       isVal1: true
@@ -32,13 +32,28 @@ export default class Conversor2 extends Component {
     })
   }
 
+  setDefault = async e => {
+    if (navigator.language === 'pt-BR') {
+      this.setState({ currency1: 'USD' })
+      this.setState({ currency2: 'BRL' })
+    } else {
+      this.setState({ currency1: 'EUR' })
+      this.setState({ currency2: 'USD' })
+    }
+  }
+
+  setDefaultAss = async e => {
+    await this.setDefault(e)
+    this.convert()
+  }
+
   componentDidMount () {
     let curr = Object.keys(allCurrency.results)
     let currencies = curr.map(c => {
       return { label: c, value: c }
     })
     this.setState({ currencies })
-    this.convert()
+    this.setDefaultAss()
   }
 
   convert = () => {
@@ -48,22 +63,27 @@ export default class Conversor2 extends Component {
       //} else {
       let base = this.state.currency1
       let parm = this.state.currency2
+
       let url = `https://api.exchangeratesapi.io/latest?base=${base}&symbols=${parm}`
+
+      //console.log(base, parm, url)
 
       fetch(url)
         .then(res => {
           return res.json()
         })
         .then(json => {
+          //console.log(json)
+
           let cot1 = parseFloat(json.rates[parm])
           let isVal1 = this.state.isVal1
           if (isVal1) {
             let val = parseFloat(this.state.value)
-            let result = (val * cot1).toFixed(2)
+            let result = (val * cot1).toFixed(3)
             this.setState({ result })
           } else {
             let val = parseFloat(this.state.result)
-            let value = (val / cot1).toFixed(2)
+            let value = (val / cot1).toFixed(3)
             this.setState({ value })
           }
         })
@@ -141,12 +161,14 @@ export default class Conversor2 extends Component {
           <div className='currencies'>
             <Select
               isSearchable={false}
-              defaultValue={{ label: 'USD', value: 'USD' }}
+              defaultValue={{
+                label: this.state.currency1,
+                value: this.state.currency1
+              }}
               value={{
                 label: this.state.currency1,
                 value: this.state.currency1
               }}
-              placeholder={intl.get('currency.one')}
               className='select'
               onChange={ev => {
                 this.setCurr1Ass(ev)
@@ -169,8 +191,10 @@ export default class Conversor2 extends Component {
                 label: this.state.currency2,
                 value: this.state.currency2
               }}
-              defaultValue={{ label: 'BRL', value: 'BRL' }}
-              placeholder={intl.get('currency.two')}
+              defaultValue={{
+                label: this.state.currency2,
+                value: this.state.currency2
+              }}
               className='select'
               onChange={ev => {
                 this.setCurr2Ass(ev)

@@ -3,6 +3,9 @@
     "CAD": {
         "id":"CAD"
     },
+    "EUR": {
+        "id":"EUR"
+    },
     "HKD": {
         "id":"HKD"
     },
@@ -33,7 +36,6 @@
     "IDR": {
         "id":"IDR"
     },
-
     "INR": {
         "id":"INR"
     },
@@ -91,7 +93,7 @@
     "GBP": {
         "id":"GBP"
     },
-    "": {
+    "KRW": {
         "id":"KRW"
     },
     "MYR": {

@@ -15,11 +15,19 @@
   "btn": {
     "convert": "Convert"
   },
-  "currency": {
-    "one": "Currency 1",
-    "two": "Currency 2"
+  "content": {
+    "msg1": "Make your conversions using the most recent quotes published by the European Central Bank."
   },
-  "msg": {
-    "fillallinputs": "You've to fill the VALUE and the CURRENCIES"
+  "container": {
+    "msg1": "Enter a value, select the currencies you want to convert to and immediately get the result based in the quotes published by",
+    "msg2": "European Central Bank."
+  },
+  "container2": {
+    "msg1": "Take care of your money",
+    "msg2": "In addition to knowing exactly the value after converting to foreign currency, the converter will help you, for example, to find the cheapest and safest way to send or receive money from abroad, which, in this way, makes planning of finances more accurate."
+  },
+  "container3":{
+    "msg1": "Do a quiet trip",
+    "msg2": "Rest assured when making that trip abroad, knowing exactly how much money to take, avoiding headaches. It is known that the market is unstable, and the value of currencies is constantly changing, so it is safer to convert based on daily updated values."
   }
 }
