@@ -146,35 +146,41 @@ export default class Conversor2 extends Component {
     return (
       <div className='conversor2'>
         <div className='inputs2'>
-          <input
-            className='input'
-            type='number'
-            inputMode='numeric'
-            value={this.state.value}
-            onChange={ev => {
-              ev.persist()
-              const evnt = ev
-              var val = evnt.target.value.replace(',', '.')
-              this.setValueAss(val)
-            }}
-          ></input>
-          <div className='currencies'>
-            <Select
-              isSearchable={false}
-              defaultValue={{
-                label: this.state.currency1,
-                value: this.state.currency1
-              }}
-              value={{
-                label: this.state.currency1,
-                value: this.state.currency1
-              }}
-              className='select'
+          <label className='labelInput'>
+            <input
+              id='input1'
+              className='input'
+              type='number'
+              inputMode='numeric'
+              value={this.state.value}
               onChange={ev => {
-                this.setCurr1Ass(ev)
+                ev.persist()
+                const evnt = ev
+                var val = evnt.target.value.replace(',', '.')
+                this.setValueAss(val)
               }}
-              options={this.state.currencies}
-            ></Select>
+            ></input>
+          </label>
+          <div className='currencies'>
+            <label className='labelInput'>
+              <Select
+                id='input2'
+                isSearchable={false}
+                defaultValue={{
+                  label: this.state.currency1,
+                  value: this.state.currency1
+                }}
+                value={{
+                  label: this.state.currency1,
+                  value: this.state.currency1
+                }}
+                className='select'
+                onChange={ev => {
+                  this.setCurr1Ass(ev)
+                }}
+                options={this.state.currencies}
+              ></Select>
+            </label>
             <div className='logoSwap'>
               <img
                 onClick={() => {
@@ -185,35 +191,41 @@ export default class Conversor2 extends Component {
                 alt='swap'
               ></img>
             </div>
-            <Select
-              isSearchable={false}
-              value={{
-                label: this.state.currency2,
-                value: this.state.currency2
-              }}
-              defaultValue={{
-                label: this.state.currency2,
-                value: this.state.currency2
-              }}
-              className='select'
-              onChange={ev => {
-                this.setCurr2Ass(ev)
-              }}
-              options={this.state.currencies}
-            ></Select>
+            <label className='labelInput'>
+              <Select
+                id='input3'
+                isSearchable={false}
+                value={{
+                  label: this.state.currency2,
+                  value: this.state.currency2
+                }}
+                defaultValue={{
+                  label: this.state.currency2,
+                  value: this.state.currency2
+                }}
+                className='select'
+                onChange={ev => {
+                  this.setCurr2Ass(ev)
+                }}
+                options={this.state.currencies}
+              ></Select>
+            </label>
           </div>
-          <input
-            className='input'
-            type='number'
-            inputMode='numeric'
-            value={this.state.result}
-            onChange={ev => {
-              ev.persist()
-              const evnt = ev
-              var val = evnt.target.value.replace(',', '.')
-              this.setValue2Ass(val)
-            }}
-          ></input>
+          <label className='labelInput'>
+            <input
+              id='input4'
+              className='input'
+              type='number'
+              inputMode='numeric'
+              value={this.state.result}
+              onChange={ev => {
+                ev.persist()
+                const evnt = ev
+                var val = evnt.target.value.replace(',', '.')
+                this.setValue2Ass(val)
+              }}
+            ></input>
+          </label>
         </div>
       </div>
     )

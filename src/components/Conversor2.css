@@ -9,6 +9,53 @@
     min-height: 100px;
 }
 
+.labelInput{
+    flex: 1;
+    display: flex;
+}
+
+.input{
+    flex: 1;
+    border-width: 1px;
+    border-radius: 5px;
+    text-align: center;
+    background-color: white;
+    color: #219669;
+    font-size: 25px;
+    font-weight: bold;
+    margin: 2px;
+    outline: 0;
+}
+
+.btn{
+    flex: 1;
+    width: 124px;
+    height: 39px;
+    border-width: 0px;
+    border-radius: 5px;
+    text-align: center;
+    background-color: #219669;
+    color: #000000;
+    font-size: 20px;
+    margin: 2px;
+    cursor: pointer;
+    outline: 0;
+}
+
+.result{
+    flex: 1;
+    width: 120px;
+    height: 35px;
+    border-width: 0px;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: #219669;
+    margin: 2px;
+    outline: 0;
+}
+
 .inputs2{
     display: flex;
     flex:1;
@@ -28,18 +75,20 @@
     flex: 1;
     align-items: center;
     justify-content: center;
-    padding: 0 5px 0 5px;
-
+    padding: 0 3px 0 3px;
+    height: 37px;
 }
 
 .select{
-    flex:1;
+    flex: 1;
+    height: 38px;
     width: 130px;
     min-width: 115px;
 }
 
 .logoSwap{
     flex: 1;
+    min-width: 75px;
 } 
 
 .logoSwapImg{

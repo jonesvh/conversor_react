@@ -53,10 +53,9 @@
     margin:0px 5px 0px 5px;
     justify-content: center;
     align-items: center;
-    max-width: 120px;
+    max-width: 100px;
     height: 50px;
     border-radius: 5px;
-    box-shadow: 1px 1px 10px -5px #FFFFFF;
     padding: 0 3px 0 3px;
 }
 
@@ -67,9 +66,9 @@
 
 .textCurr{
     flex: 1;
-    margin-left: 5px;
-    font-size: 19px;
-    color: white;
+    margin: 0 5px 0 5px;
+    font-size: 15pt;
+    color: #000000;
 }
 
 .title{
@@ -77,8 +76,7 @@
     flex: 1;
     color:white;
     align-items: center;
-    justify-content: center;
-    
+    justify-content: center;    
 }
 
 .textTitle3{
@@ -93,7 +91,7 @@
 .textTitle2{
     flex: 1;
     color: #FFFFFF;
-    margin-bottom: 80px;
+    margin-bottom: 150px;
     margin-top: 50px;
     font-size: 80px;
     max-height: 100px;
@@ -241,6 +239,27 @@
 
 .itemFooter{
     flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.linkedIn{
+    width: 75px;
+}
+
+.itemFooter2{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.itemFooter2Text{
+    flex: 1;
+    margin: 2px;
+    text-decoration-color: black;
+    color: black;
 }
 
 .externalLink{

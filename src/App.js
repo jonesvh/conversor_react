@@ -3,6 +3,7 @@ import './App.css'
 import Conversor2 from './components/Conversor2'
 import intl from 'react-intl-universal'
 import Media from 'react-media'
+import ReactGA from 'react-ga'
 
 import logo from './assets/eurocentralbanklogo.jpg'
 import logoMoney from './assets/moneyuplogo.jpg'
@@ -12,6 +13,8 @@ import euaFlag from './assets/euaFlag.jpg'
 import euroFlag from './assets/euroFlag.jpg'
 import brazilFlag from './assets/brazilFlag.jpg'
 import ukFlag from './assets/ukFlag.jpg'
+
+import linkedIn from './assets/linkedin.png'
 
 const locales = {
   'pt-BR': require('./locales/pt-BR.json'),
@@ -35,9 +38,12 @@ class App extends Component {
       currentLocale,
       locales
     })
+    ReactGA.initialize('UA-162192560-1')
   }
 
   componentDidMount () {
+    ReactGA.pageview(window.location.pathname + window.location.search)
+
     let base = ''
     let parm1 = ''
     let parm2 = ''
@@ -260,12 +266,13 @@ class App extends Component {
           <p className='itemContainer'>{intl.get('container3.msg2')}</p>
         </div>
         <div className='footer'>
-          <p className='itemFooter'>
-            {intl.get('devby.dev')}: Jones Veriato Hoffstetter
-          </p>
-          <p className='itemFooter'>
-            {intl.get('devby.hints')}: Augusto Zvoboter
-          </p>
+          <div className='itemFooter'>
+            <img src={linkedIn} className='linkedIn' alt='linkedIn'></img>
+            <div className="itemFooter2">
+              <a href="https://www.linkedin.com/in/jones-vh-3464031a6" target="_blank" rel="noopener noreferrer" className="itemFooter2Text">Jones Veriato Hoffstetter</a>
+              <a href="https://www.linkedin.com/in/augusto-ricardo-tischler-zvoboter-50babb127/" target="_blank" rel="noopener noreferrer" className="itemFooter2Text">Augusto Ricardo Tischler Zvoboter</a>
+            </div>
+          </div>
         </div>
       </div>
     )
