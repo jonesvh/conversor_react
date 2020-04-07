@@ -30,8 +30,9 @@ export default class components extends Component {
     return (
       <div className='aboutContainer'>
         <div className='aboutHeader'>
-          <Link to='/'>
-            <div className='logo'></div>
+          <Link className='linkHome' to='/'>
+            <div className='logoHome'></div>
+            {intl.get('header.msg1')}
           </Link>
         </div>
         <div className='aboutSite'>
@@ -133,11 +134,15 @@ export default class components extends Component {
         </div>
         <div className='footer'>
           <div className='itemFooter'>
-            <div className="itemFooter2">
-              <Link to="/about">{intl.get('footer.msg1')}</Link>
+            <div className='itemFooter2'>
+              <Link className='linkFooter' to='/about'>
+                {intl.get('footer.msg1')}
+              </Link>
             </div>
-            <div className="itemFooter2">
-              <Link to="/contactus">{intl.get('footer.msg2')}</Link>
+            <div className='itemFooter2'>
+              <Link className='linkFooter' to='/contactus'>
+                {intl.get('footer.msg2')}
+              </Link>
             </div>
           </div>
         </div>

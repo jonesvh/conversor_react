@@ -78,5 +78,15 @@
     "msg5": {
       "dsc1": "Send"
     }
+  },
+
+  "header": {
+    "msg1": "Home"
+  },
+
+  "formRes": {
+    "msg1": "E-mail sent with success.",
+    "msg2": "Failed to send email, please try again.",
+    "msg3": "The Name, E-mail and Message fields are mandatory."
   }
 }

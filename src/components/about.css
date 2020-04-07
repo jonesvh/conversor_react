@@ -16,6 +16,28 @@
     min-height: 120px;
 }
 
+.linkHome{
+    flex: 1 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 115px;
+    font-size: 15px;
+    color: #000000;
+    text-decoration: none;
+}
+
+.logoHome{
+    flex: 1;
+    background-image: url('../assets/logo192.jpg');
+    background-repeat: round;
+    background-color: white;
+    border-radius: 50px;
+    width: 100px;
+    height: 100px;
+}
+
 .aboutSite{
     flex: 1;
     display: flex;

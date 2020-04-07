@@ -78,5 +78,15 @@
     "msg5": {
       "dsc1": "Enviar"
     }
+  },
+
+  "header": {
+    "msg1": "Início"
+  },
+
+  "formRes": {
+    "msg1": "E-mail enviado com sucesso.",
+    "msg2": "Falha ao enviar e-mail, tente novamente.",
+    "msg3": "Os campos Nome, E-mail e Mensagem são obrigatórios."
   }
 }

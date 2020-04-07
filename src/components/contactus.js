@@ -1,6 +1,5 @@
-import React, { Component, Fragment } from 'react'
+import React, { Component } from 'react'
 import './contactus.css'
-import Media from 'react-media'
 import { Link } from 'react-router-dom'
 import intl from 'react-intl-universal'
 
@@ -13,10 +12,11 @@ export default class components extends Component {
   constructor () {
     super()
     this.state = {
-      formName: '',
-      formEmail: '',
-      formPhone: '',
-      formMessage: ''
+      name: '',
+      email: '',
+      phone: '',
+      message: '',
+      response: ''
     }
 
     const currentLocale = locales[navigator.language]
@@ -29,12 +29,49 @@ export default class components extends Component {
     })
   }
 
+  validateMail = () => {
+    this.setState({ response: '' })
+
+    if (
+      this.state.name === '' ||
+      this.state.email === '' ||
+      this.state.message === ''
+    ) {
+      this.setState({ response: intl.get('formRes.msg3') })
+    } else {
+      this.sendMail()
+    }
+  }
+
+  sendMail = async () => {
+    let json = this.state
+    let url = 'https://currconverter-api.herokuapp.com/sendmail'
+    const res = await fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(json)
+    })
+    console.log(res.status)
+    if (res.status) {
+      let resp = res.status.toString()
+      if (resp === '200') {
+        this.setState({name: '', email: '', phone: '', message: ''})
+      }
+      this.setState({ response: resp })
+    } else {
+      this.setState({ response: '500' })
+    }
+  }
+
   render () {
     return (
       <div className='aboutContainer'>
         <div className='aboutHeader'>
-          <Link to='/'>
-            <div className='logo'></div>
+          <Link className='linkHome' to='/'>
+            <div className='logoHome'></div>
+            {intl.get('header.msg1')}
           </Link>
         </div>
         <div className='contContainer'>
@@ -50,9 +87,9 @@ export default class components extends Component {
                 className='inputForm'
                 type='text'
                 inputMode='text'
-                value={this.state.formName}
+                value={this.state.name}
                 onChange={ev => {
-                  this.setState({formName : ev.value})
+                  this.setState({ name: ev.target.value })
                 }}
               ></input>
             </label>
@@ -63,9 +100,9 @@ export default class components extends Component {
                 className='inputForm'
                 type='email'
                 inputMode='email'
-                value={this.state.formEmail}
+                value={this.state.email}
                 onChange={ev => {
-                  this.setState({formEmail : ev.value})
+                  this.setState({ email: ev.target.value })
                 }}
               ></input>
             </label>
@@ -76,9 +113,9 @@ export default class components extends Component {
                 className='inputForm'
                 type='text'
                 inputMode='tel'
-                value={this.state.formPhone}
+                value={this.state.phone}
                 onChange={ev => {
-                  this.setState({formPhone : ev.value})
+                  this.setState({ phone: ev.target.value })
                 }}
               ></input>
             </label>
@@ -88,26 +125,43 @@ export default class components extends Component {
                 className='textareaForm'
                 type='text'
                 inputMode='text'
-                value={this.state.formMessage}
+                value={this.state.message}
                 onChange={ev => {
-                  this.setState({formMessage : ev.value})
+                  this.setState({ message: ev.target.value })
                 }}
               ></textarea>
             </label>
             <label className='labelInputForm'>
-              <button className='buttonForm'>
+              <button className='buttonForm' onClick={this.validateMail}>
                 {intl.get('contForm.msg5.dsc1')}
               </button>
             </label>
+            {this.state.response === '200' || this.state.response === '500' ? (
+              <div>
+                {this.state.response === '200' ? (
+                  <h3>{intl.get('formRes.msg1')}</h3>
+                ) : (
+                  <h3>{intl.get('formRes.msg2')}</h3>
+                )}
+              </div>
+            ) : (
+              <div>
+                <h3>{this.state.response}</h3>
+              </div>
+            )}
           </div>
         </div>
         <div className='footer'>
           <div className='itemFooter'>
             <div className='itemFooter2'>
-              <Link to='/about'>{intl.get('footer.msg1')}</Link>
+              <Link className='linkFooter' to='/about'>
+                {intl.get('footer.msg1')}
+              </Link>
             </div>
             <div className='itemFooter2'>
-              <Link to='/contactus'>{intl.get('footer.msg2')}</Link>
+              <Link className='linkFooter' to='/contactus'>
+                {intl.get('footer.msg2')}
+              </Link>
             </div>
           </div>
         </div>

@@ -242,7 +242,6 @@
     flex: 1;
     display: flex;
     align-items: center;
-    width: 100%;
 }
 
 .linkedIn{
@@ -258,6 +257,7 @@
     font-size: 20px;
     padding: 15px;
     min-height: 50px;
+    min-width: 105px;
 }
 
 .itemFooter2Text{
@@ -265,6 +265,11 @@
     margin: 2px;
     text-decoration-color: black;
     color: black;
+}
+
+.linkFooter{
+    text-decoration: none;
+    color: #000000;
 }
 
 .externalLink{

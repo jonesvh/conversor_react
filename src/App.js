@@ -268,10 +268,10 @@ class App extends Component {
         <div className='footer'>
           <div className='itemFooter'>
             <div className="itemFooter2">
-              <Link to="/about">{intl.get('footer.msg1')}</Link>
+              <Link className="linkFooter" to="/about">{intl.get('footer.msg1')}</Link>
             </div>
             <div className="itemFooter2">
-              <Link to="/contactus">{intl.get('footer.msg2')}</Link>
+              <Link className="linkFooter" to="/contactus">{intl.get('footer.msg2')}</Link>
             </div>
           </div>
         </div>
