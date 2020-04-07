@@ -1,12 +1,15 @@
 {
+  "titleTag": {
+    "msg1": "Free online currency converter"
+  },
+  "metaTagDsc": {
+    "msg1": "Convert currencies in a very simple and free way, at convert-moeda.com you have the most current quotes for calculations with foreign currencies."
+  },
+  "metaTagKeys": {
+    "msg1": "converter, currency, online, convert, value, free"
+  },
   "title": {
     "dsc": "Currency Converter"
-  },
-  "example": {
-    "dsc": "Example"
-  },
-  "tryyourself": {
-    "dsc": "Try yourself"
   },
   "devby": {
     "dev": "Developed by",
@@ -26,8 +29,54 @@
     "msg1": "Take care of your money",
     "msg2": "In addition to knowing exactly the value after converting to foreign currency, the converter will help you, for example, to find the cheapest and safest way to send or receive money from abroad, which, in this way, makes planning of finances more accurate."
   },
-  "container3":{
+  "container3": {
     "msg1": "Do a quiet trip",
     "msg2": "Rest assured when making that trip abroad, knowing exactly how much money to take, avoiding headaches. It is known that the market is unstable, and the value of currencies is constantly changing, so it is safer to convert based on daily updated values."
+  },
+  "aboutTitle": {
+    "msg1": "About the Site"
+  },
+  "aboutDsc": {
+    "msg1": "The site",
+    "msg2": "was developed in order to help people by always making available the most current quotes based on data published by the European Central Bank. The purpose of the converter is to facilitate the conversion of values between currencies, making it as simple and clear as possible."
+  },
+  "aboutUsTitle": {
+    "msg1": "About the Developers"
+  },
+  "aboutUsDsc1": {
+    "msg1": "Graduated as a technologist in systems analysis and development, he has a technical course in computer science and has been working in the area for 5 years."
+  },
+  "aboutUsDsc2": {
+    "msg1": "Graduated as a technologist in systems analysis and development, he has a technical course in computer science and has been working in the area for 5 years."
+  },
+  "footer": {
+    "msg1": "About",
+    "msg2": "Contact Us"
+  },
+
+  "contTitle": {
+    "msg1": "Contact us.",
+    "msg2": "Did you like the site? Do you have any suggestions for us to improve it? Any functionality you would like us to implement? Or just like to leave feedback for us. Send an email with what would you like to talk to us about, and if necessary we will contact you."
+  },
+
+  "contForm": {
+    "msg1": {
+      "dsc1": "Your name",
+      "dsc2": "Fill your name"
+    },
+    "msg2": {
+      "dsc1": "Your e-mail",
+      "dsc2": "Fill your e-mail"
+    },
+    "msg3": {
+      "dsc1": "Your phone (Optional)",
+      "dsc2": "Fill your phone"
+    },
+    "msg4": {
+      "dsc1": "Message"
+    },
+    "msg5": {
+      "dsc1": "Send"
+    }
   }
 }

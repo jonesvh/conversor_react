@@ -1,4 +1,13 @@
 {
+  "titleTag": {
+    "msg1": "Conversor de moedas online gratuito"
+  },
+  "metaTagDsc": {
+    "msg1": "Converta moedas de forma muito simples e gratuita, no converte-moeda.com você tem as cotações mais atuais para calculos com moedas estrangeiras."
+  },
+  "metaTagKeys": {
+    "msg1": "conversor,moeda,online,gratis,converte,valor,gratuito,converter"
+  },
   "title": {
     "dsc": "Conversor de Moeda"
   },
@@ -20,8 +29,54 @@
     "msg1": "Cuide do seu dinheiro",
     "msg2": "Além de saber, exatamente, o valor após a conversão em moeda estrangeira, o conversor vai auxiliar você para, por exemplo, encontrar a maneira mais barata e segura de enviar ou de receber dinheiro do exterior, o que, dessa forma, torna o planejamento das finanças mais exato."
   },
-  "container3":{
+  "container3": {
     "msg1": "Viaje tranquilo",
     "msg2": "Fique mais tranquilo quando for fazer aquela viagem ao exterior, sabendo exatamente quanto dinheiro deve levar, evitando dor de cabeça. Sabe-se que o mercado é instável, e o valor das moedas muda constantemente, portanto é mais seguro converter através de valores atualizados diariamente."
+  },
+  "aboutTitle": {
+    "msg1": "Sobre o Site"
+  },
+  "aboutDsc": {
+    "msg1": "O site",
+    "msg2": "foi desenvolvido com intuito de ajudar as pessoas disponibilizando sempre as cotações mais atuais baseado nos dados publicados pelo Banco Central Europeu. O objetivo do conversor é facilitar a conversão de valores entre moedas, fazendo isso da forma mais simples e claro possível."
+  },
+  "aboutUsTitle": {
+    "msg1": "Sobre os Desenvolvedores"
+  },
+  "aboutUsDsc1": {
+    "msg1": "Formado como técnologo em análise e desenvolvimento de sistemas, possui curso técnico em informática e está a 5 anos trabalhando na area."
+  },
+  "aboutUsDsc2": {
+    "msg1": "Graduated as a technologist in systems analysis and development, he has a technical course in computer science and has been working in the area for 5 years."
+  },
+  "footer": {
+    "msg1": "Sobre",
+    "msg2": "Contate-nos"
+  },
+
+  "contTitle": {
+    "msg1": "Entre em contato conosco.",
+    "msg2": "Gostou do site, tem alguma sugestão para que possamos melhorá-lo? Alguma funcionalidade que gostaria que implementessemos? Ou apens gostaria de deixar um feedback para nos. Encaminhe um email com o que gostaria de nós falar, e caso necessário entraremos em contato com você."
+  },
+
+  "contForm": {
+    "msg1": {
+      "dsc1": "Seu nome",
+      "dsc2": "Preencha seu nome"
+    },
+    "msg2": {
+      "dsc1": "Seu e-mail",
+      "dsc2": "Preencha seu e-mail"
+    },
+    "msg3": {
+      "dsc1": "Seu telefone (Opcional)",
+      "dsc2": "Preencha seu telefone"
+    },
+    "msg4": {
+      "dsc1": "Mensagem"
+    },
+    "msg5": {
+      "dsc1": "Enviar"
+    }
   }
 }

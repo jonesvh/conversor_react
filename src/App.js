@@ -1,9 +1,11 @@
 import React, { Component, Fragment } from 'react'
+
 import './App.css'
 import Conversor2 from './components/Conversor2'
 import intl from 'react-intl-universal'
 import Media from 'react-media'
 import ReactGA from 'react-ga'
+import { Link } from 'react-router-dom'
 
 import logo from './assets/eurocentralbanklogo.jpg'
 import logoMoney from './assets/moneyuplogo.jpg'
@@ -13,8 +15,6 @@ import euaFlag from './assets/euaFlag.jpg'
 import euroFlag from './assets/euroFlag.jpg'
 import brazilFlag from './assets/brazilFlag.jpg'
 import ukFlag from './assets/ukFlag.jpg'
-
-import linkedIn from './assets/linkedin.png'
 
 const locales = {
   'pt-BR': require('./locales/pt-BR.json'),
@@ -267,10 +267,11 @@ class App extends Component {
         </div>
         <div className='footer'>
           <div className='itemFooter'>
-            <img src={linkedIn} className='linkedIn' alt='linkedIn'></img>
             <div className="itemFooter2">
-              <a href="https://www.linkedin.com/in/jones-vh-3464031a6" target="_blank" rel="noopener noreferrer" className="itemFooter2Text">Jones Veriato Hoffstetter</a>
-              <a href="https://www.linkedin.com/in/augusto-ricardo-tischler-zvoboter-50babb127/" target="_blank" rel="noopener noreferrer" className="itemFooter2Text">Augusto Ricardo Tischler Zvoboter</a>
+              <Link to="/about">{intl.get('footer.msg1')}</Link>
+            </div>
+            <div className="itemFooter2">
+              <Link to="/contactus">{intl.get('footer.msg2')}</Link>
             </div>
           </div>
         </div>
