@@ -29,11 +29,15 @@ export default class components extends Component {
   render () {
     return (
       <div className='aboutContainer'>
-        <div className='aboutHeader'>
-          <Link className='linkHome' to='/'>
-            <div className='logoHome'></div>
-            {intl.get('header.msg1')}
-          </Link>
+        <div className='header'>
+          <div className='contentHeader'>
+            <Link className='linkHome' to='/'>
+              <div className='logo'></div>
+            </Link>
+            <div className='titleContact'>
+              <h1>{intl.get('aboutTitle.msg2')}</h1>
+            </div>
+          </div>
         </div>
         <div className='aboutSite'>
           <h1 className='aboutSiteTitle'>{intl.get('aboutTitle.msg1')}</h1>
@@ -72,42 +76,46 @@ export default class components extends Component {
                   )}
                 </Media>
                 <div className='aboutUsContentItem1Text'>
-                  <h2 className='aboutUsContentItem1TextTitle'>Jones</h2>
+                  <div className='nomeLogo'>
+                    <h2 className='aboutUsContentItem1TextTitle'>Jones</h2>
+                    <a
+                      href='https://www.linkedin.com/in/jones-vh-3464031a6/'
+                      rel='noopener noreferrer'
+                      target='_blank'
+                    >
+                      <img
+                        alt='linkedin'
+                        className='logoLinkedIn'
+                        src={linkedin}
+                      />
+                    </a>
+                  </div>
                   <p className='aboutUsContentItem1TextBody'>
                     {intl.get('aboutUsDsc1.msg1')}
                   </p>
-                  <a
-                    href='https://www.linkedin.com/in/jones-vh-3464031a6/'
-                    rel='noopener noreferrer'
-                    target='_blank'
-                  >
-                    <img
-                      alt='linkedin'
-                      className='logoLinkedIn'
-                      src={linkedin}
-                    />
-                  </a>
                 </div>
               </div>
             </div>
             <div className='aboutUsContentItem3Div'>
               <div className='aboutUsContentItem3'>
                 <div className='aboutUsContentItem3Text'>
-                  <h2 className='aboutUsContentItem3TextTitle'>Augusto</h2>
+                  <div className='nomeLogo'>
+                    <h2 className='aboutUsContentItem3TextTitle'>Augusto</h2>
+                    <a
+                      href='https://www.linkedin.com/in/augusto-ricardo-tischler-zvoboter-50babb127/'
+                      rel='noopener noreferrer'
+                      target='_blank'
+                    >
+                      <img
+                        alt='linkedin'
+                        className='logoLinkedIn'
+                        src={linkedin}
+                      />
+                    </a>
+                  </div>
                   <p className='aboutUsContentItem3TextBody'>
-                    {intl.get('aboutUsDsc1.msg1')}
+                    {intl.get('aboutUsDsc2.msg1')}
                   </p>
-                  <a
-                    href='https://www.linkedin.com/in/augusto-ricardo-tischler-zvoboter-50babb127/'
-                    rel='noopener noreferrer'
-                    target='_blank'
-                  >
-                    <img
-                      alt='linkedin'
-                      className='logoLinkedIn'
-                      src={linkedin}
-                    />
-                  </a>
                 </div>
                 <Media
                   queries={{

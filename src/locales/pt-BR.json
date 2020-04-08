@@ -34,7 +34,8 @@
     "msg2": "Fique mais tranquilo quando for fazer aquela viagem ao exterior, sabendo exatamente quanto dinheiro deve levar, evitando dor de cabeça. Sabe-se que o mercado é instável, e o valor das moedas muda constantemente, portanto é mais seguro converter através de valores atualizados diariamente."
   },
   "aboutTitle": {
-    "msg1": "Sobre o Site"
+    "msg1": "Sobre o Site",
+    "msg2": "Sobre"
   },
   "aboutDsc": {
     "msg1": "O site",
@@ -47,7 +48,7 @@
     "msg1": "Formado como técnologo em análise e desenvolvimento de sistemas, possui curso técnico em informática e está a 5 anos trabalhando na area."
   },
   "aboutUsDsc2": {
-    "msg1": "Graduated as a technologist in systems analysis and development, he has a technical course in computer science and has been working in the area for 5 years."
+    "msg1": "Desenvolvedor, bacharel em sistema de informação e a procura de novos desafios, está envolvido a mais de 8 anos na área de programação, dentre estudos e trabalho."
   },
   "footer": {
     "msg1": "Sobre",
@@ -55,7 +56,7 @@
   },
 
   "contTitle": {
-    "msg1": "Entre em contato conosco.",
+    "msg1": "Contate-nos",
     "msg2": "Gostou do site, tem alguma sugestão para que possamos melhorá-lo? Alguma funcionalidade que gostaria que implementessemos? Ou apens gostaria de deixar um feedback para nos. Encaminhe um email com o que gostaria de nós falar, e caso necessário entraremos em contato com você."
   },
 

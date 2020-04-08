@@ -57,7 +57,7 @@ export default class components extends Component {
     if (res.status) {
       let resp = res.status.toString()
       if (resp === '200') {
-        this.setState({name: '', email: '', phone: '', message: ''})
+        this.setState({ name: '', email: '', phone: '', message: '' })
       }
       this.setState({ response: resp })
     } else {
@@ -68,15 +68,18 @@ export default class components extends Component {
   render () {
     return (
       <div className='aboutContainer'>
-        <div className='aboutHeader'>
-          <Link className='linkHome' to='/'>
-            <div className='logoHome'></div>
-            {intl.get('header.msg1')}
-          </Link>
+        <div className='header'>
+          <div className='contentHeader'>
+            <Link className='linkHome' to='/'>
+              <div className='logo'></div>
+            </Link>
+            <div className='titleContact'>
+              <h1>{intl.get('aboutTitle.msg2')}</h1>
+            </div>
+          </div>
         </div>
         <div className='contContainer'>
           <div className='contContainerBody'>
-            <h1>{intl.get('contTitle.msg1')}</h1>
             <p className='contBodyText'>{intl.get('contTitle.msg2')}</p>
           </div>
           <div className='contForm'>

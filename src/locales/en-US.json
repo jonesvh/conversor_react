@@ -34,7 +34,8 @@
     "msg2": "Rest assured when making that trip abroad, knowing exactly how much money to take, avoiding headaches. It is known that the market is unstable, and the value of currencies is constantly changing, so it is safer to convert based on daily updated values."
   },
   "aboutTitle": {
-    "msg1": "About the Site"
+    "msg1": "About the Site",
+    "msg2": "About"
   },
   "aboutDsc": {
     "msg1": "The site",
@@ -47,7 +48,7 @@
     "msg1": "Graduated as a technologist in systems analysis and development, he has a technical course in computer science and has been working in the area for 5 years."
   },
   "aboutUsDsc2": {
-    "msg1": "Graduated as a technologist in systems analysis and development, he has a technical course in computer science and has been working in the area for 5 years."
+    "msg1": "A developer with a bachelor's degree in information systems and the search for new challenges, he has been involved in programming for more than 8 years, including studies and work."
   },
   "footer": {
     "msg1": "About",
@@ -55,7 +56,7 @@
   },
 
   "contTitle": {
-    "msg1": "Contact us.",
+    "msg1": "Contact Us",
     "msg2": "Did you like the site? Do you have any suggestions for us to improve it? Any functionality you would like us to implement? Or just like to leave feedback for us. Send an email with what would you like to talk to us about, and if necessary we will contact you."
   },
 
@@ -87,6 +88,6 @@
   "formRes": {
     "msg1": "E-mail sent with success.",
     "msg2": "Failed to send email, please try again.",
-    "msg3": "The Name, E-mail and Message fields are mandatory."
+    "msg3": "The Name, E-mail and Message fields are obligatory."
   }
 }
