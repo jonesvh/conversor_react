@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import './contactus.css'
 import { Link } from 'react-router-dom'
 import intl from 'react-intl-universal'
+import ReactGA from 'react-ga'
 
 const locales = {
   'pt-BR': require('../locales/pt-BR.json'),
@@ -27,6 +28,11 @@ export default class components extends Component {
       currentLocale,
       locales
     })
+    ReactGA.initialize('UA-162192560-1')
+  }
+
+  componentDidMount () {
+    ReactGA.pageview(window.location.pathname + window.location.search)
   }
 
   validateMail = () => {

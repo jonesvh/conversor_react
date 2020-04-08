@@ -3,6 +3,7 @@ import './about.css'
 import Media from 'react-media'
 import { Link } from 'react-router-dom'
 import intl from 'react-intl-universal'
+import ReactGA from 'react-ga'
 
 import dev1 from '../assets/aboutJones.jpg'
 import dev2 from '../assets/aboutAugusto.jpg'
@@ -24,6 +25,11 @@ export default class components extends Component {
       currentLocale,
       locales
     })
+    ReactGA.initialize('UA-162192560-1')
+  }
+
+  componentDidMount () {
+    ReactGA.pageview(window.location.pathname + window.location.search)
   }
 
   render () {
