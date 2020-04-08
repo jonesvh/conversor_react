@@ -52,7 +52,8 @@
   },
   "footer": {
     "msg1": "About",
-    "msg2": "Contact Us"
+    "msg2": "Contact Us",
+    "msg3": "Home"
   },
 
   "contTitle": {
